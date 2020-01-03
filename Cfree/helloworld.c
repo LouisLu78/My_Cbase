@@ -1,5 +1,5 @@
 # include<stdio.h>
 main()
 {
-    printf ("Hello World!\n This is my first C or C++ Program I written in my life!");
+    printf ("Hello World!\nThis is my first C or C++ Program I have ever written in my life!");
 }

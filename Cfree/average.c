@@ -16,7 +16,7 @@ main()
         
 	} 
 	
-    printf("The average of the numbers is %.2f.", (float)sum / i);
+    printf("The average of the numbers is %f.", (float)sum / i);
     
     return 0;
     
