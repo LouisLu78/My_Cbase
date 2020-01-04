@@ -1,4 +1,5 @@
 # include <stdio.h>
+
 int perfect_num(int N);
 
 int main()
@@ -21,12 +22,10 @@ int perfect_num(int N)
 {
 	int i, sum=1;
 	
-	if (N==1){
-		return 1;
-	}
-	else if (N==2){
+	if (N==1 || N==2){
 		return 0;
 	}
+	
 	else {
 		for (i=2;i<N;i++){
 			if (N%i==0){
