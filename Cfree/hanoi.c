@@ -1,35 +1,29 @@
 # include <stdio.h>
 
-int hanoi(int N, int start, int temp, int target);
+void hanoi(int N, char start, char temp, char target);
 
 int main()
 {
 	int N;
 	N=3;
-	hanoi(N, 1, 2, 3);
+	char a, b, c;
+	hanoi(N, a, b, c);
 	return 0;
 }
 
 
-int hanoi(int N, int start, int temp, int target)
+void hanoi(int N, char start, char temp, char target)
 {
 	
-	int c;
-	
-	
 	if (N==1){
-		printf("d%->d%", start, target);
+		printf("c%->c%\n", start, target);
+		return;
 	}
 	
 	else {
-		printf("d%->d%", hanoi(N-1, start, temp, target), target);
-		printf("d%->d%", hanoi(N-1, start, temp, target), temp);
-		printf("d%->d%", start,target);
-		printf("d%->d%", hanoi(N-1, start, temp, target), start);
-		printf("d%->d%", hanoi(N-1, start, temp, target), target);	
-		c=start;
-		start=target;
-		target=c;	
+		hanoi(N-1, start, target, temp);
+		printf("c%->c%\n", start, target);
+		hanoi(N-1, temp, start, target);
 		
 	}
 	
