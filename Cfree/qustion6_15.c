@@ -1,6 +1,6 @@
 # include <stdio.h>
 
-# define SIZE 20 
+# define SIZE 5 
 
 int check_num(const int data[], int len, int key);
 
@@ -17,7 +17,7 @@ main()
 		if (number>=10 && number<=100){
 			a[i]=number;
 			signal=check_num(a, i, number);					
-			if (signal == 1){
+			if (signal){
 			printf("%d\n",number);
 			}
 			i++;
