@@ -16,7 +16,7 @@ main()
 	
 	while (order != 9){
 		printf("Please input your number of order:");
-		scanf("d%", &order);
+		scanf("%d", &order);
 		
 		if (order == 2){
 			width = 1;
