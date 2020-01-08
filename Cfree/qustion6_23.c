@@ -69,10 +69,19 @@ main()
 			scanf("%d", &step);
 			row = row0 + height * step;
 			column = column0 + width * step;
-			for (i = row0; i <= row; i++){
-        		for (j = column0; j <= column; j++){	
-        			floor[i][j] = 1;
-        		}
+			if (row >= row0 && column >= column0){
+				for (i = row0; i <= row; i++){
+        			for (j = column0; j <= column; j++){	
+        				floor[i][j] = 1;
+        			}
+				}			
+        	}
+        	if (row<=row0 && column<=column0){
+				for (i = row0; i >= row; i--){
+        			for (j = column0; j >= column; j--){	
+        				floor[i][j] = 1;
+        			}
+				}			
         	}
         	row0 = row;
         	column0 = column;
