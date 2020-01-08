@@ -2,38 +2,128 @@
 
 # define SIZE 50 
 
+void printArray(int a[50][50]);
 
 
 main()
 {
-	int floor[50][50]={0};
-	int order[7]={1,2,3,4,5,6,9};
-	int row, column;
-	int order=1; step=0;
+	int floor[SIZE][SIZE]={0};
+	
+	int row0=0, column0=0; 
+	int row, column, width, height;
+	int order, count_R=0, count_L=0;
+	int i, j, step;	
 	
 	while (order != 9){
+		printf("Please input your number of order:");
+		scanf("d%", &order);
+		
 		if (order == 2){
-			row=0;
-			column=0;
+			width = 1;
+			height = 0;
+			count_R++;
 		}
-		elif (order == 3){
-			colunm += step;
+		
+		else if (order == 3){
+			if (count_R%4 == 0){
+				width = 1;
+				height = 0;
+			}
+			else if(count_R%4 == 1){
+				width = 0;
+				height = 1;
+			}
+			else if(count_R%4 == 2){
+				width = -1;
+				height = 0;
+			}
+			else{
+				width = 0;
+				height = -1;
+			}
+			count_R++;
 		}
-		elif (order == 4){
-			colunm -= step;
+		
+		else if (order == 4){
+			if (count_L%4 == 0){
+				width = -1;
+				height = 0;
+			}
+			else if(count_L%4 == 1){
+				width = 0;
+				height = 1;
+			}
+			else if(count_L%4 == 2){
+				width = 1;
+				height = 0;
+			}
+			else{
+				width = 0;
+				height = -1;
+			}
+			count_L++;
 		}
-		elif (order == 5 && step>0){
-			row += step;
-		}
-		elif (order == 6){
-			printArray(floor, 50, 50);
-		}
-	}
-	for (i=0; i<50; i++){
-        for (j=0;j<50;j++){	
-        	printf("%4d",floor[i][j]);
+		
+		else if ( order == 5 ){
+			printf("Please input again with your number of step:");
+			scanf("d%", &step);
+			row = row0 + height * step;
+			column = column0 + width * step;
+			for (i = row0; i <= row; i++){
+        		for (j = column0; j <= column; j++){	
+        			floor[i][j] = 1;
+        		}
+        	}
+        	row0 = row;
+        	column0 = column;
     	}
-    	printf("\n");
+			
+		else if (order == 6){
+			printArray(floor);
+		}
+		
 	}
+	
 	return 0;
- } /* to be finished tomorrow */
+ } 
+ 
+ void printArray(int a[50][50])
+ {
+ 	int i, j;
+ 	
+ 	for (i = 0; i < 50; i++){
+        for (j = 0; j < 50; j++){
+        	if (a[i][j] == 1){
+        		printf("*");
+			}
+			else if (a[i][j] == 0){
+        		printf(" ");
+			}
+		}
+		printf("\n");
+	}
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
