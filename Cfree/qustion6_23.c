@@ -76,7 +76,7 @@ main()
         			}
 				}			
         	}
-        	if (row<=row0 && column<=column0){
+        	if (row <= row0 && column <= column0){
 				for (i = row0; i >= row; i--){
         			for (j = column0; j >= column; j--){	
         				floor[i][j] = 1;
@@ -119,7 +119,7 @@ main()
 	}
  }
  
- 
+ /* I have successfully solved this problem, but some small details need more improvement, which will be done later. */ 
  
  
  
