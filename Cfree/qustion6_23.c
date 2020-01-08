@@ -17,8 +17,11 @@ main()
 	while (order != 9){
 		printf("Please input your number of order:");
 		scanf("%d", &order);
-		
-		if (order == 2){
+		if （order == 1){
+		    ;
+    	}
+
+		else if (order == 2){
 			width = 1;
 			height = 0;
 			count_R++;
@@ -92,12 +95,7 @@ main()
 		}
 		
 	}
-	for (i = 0; i < 50; i++){
-        for (j = 0; j < 50; j++){
-        	printf("%d ",floor[i][j]);
-    	}
-    	printf("\n");
-	}
+
 	
 	return 0;
  } 
