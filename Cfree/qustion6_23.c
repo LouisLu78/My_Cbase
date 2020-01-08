@@ -66,7 +66,7 @@ main()
 		
 		else if ( order == 5 ){
 			printf("Please input again with your number of step:");
-			scanf("d%", &step);
+			scanf("%d", &step);
 			row = row0 + height * step;
 			column = column0 + width * step;
 			for (i = row0; i <= row; i++){
@@ -82,6 +82,12 @@ main()
 			printArray(floor);
 		}
 		
+	}
+	for (i = 0; i < 50; i++){
+        for (j = 0; j < 50; j++){
+        	printf("%d ",floor[i][j]);
+    	}
+    	printf("\n");
 	}
 	
 	return 0;
