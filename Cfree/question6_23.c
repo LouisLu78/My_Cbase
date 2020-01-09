@@ -17,7 +17,7 @@ main()
 	while (order != 9){
 		printf("Please input your number of order:");
 		scanf("%d", &order);
-		if （order == 1){
+		if (order == 1){
 		    ;
     	}
 
@@ -94,9 +94,7 @@ main()
 			printArray(floor);
 		}
 		
-	}
-
-	
+	}	
 	return 0;
  } 
  
@@ -106,18 +104,13 @@ main()
  	
  	for (i = 0; i < 50; i++){
         for (j = 0; j < 50; j++){
-        	if (a[i][j] == 1){
-        		printf("*");
-			}
-			else if (a[i][j] == 0){
-        		printf(" ");
-			}
+        	a[i][j] == 1 ? printf("*") : printf(" ");
 		}
 		printf("\n");
 	}
  }
  
- /* I have successfully solved this problem, but some small details need more improvement, which will be done later. */ 
+ 
  
  
  
