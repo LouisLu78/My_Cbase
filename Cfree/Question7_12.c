@@ -17,20 +17,23 @@ main()
 	
 	select(deck);
 	
-	for (row = 0; row < 5; row++){
+	for (row = 0; row < 4; row++){
 	    for (column = 0; column < 13; column++){
 	        if (deck[row][column] > 0){
 	            chosen[count] = column;	            
-	            printf("%d ", chosen[count]);
-	            count++;
+	            /*printf("%d %d\n", count, chosen[count]);*/	            
 	            printf("%s of %s\n", suit[row], face[column]);
+	            count++;
 	        }
 	    }
 	}
 	
 	pair = test_pair(chosen);
-	if (pair > 0){
-	    printf("We have found %d pairs", pair);
+	if (pair){
+	    printf("We have found %d pair(s).", pair);
+	}
+	else{
+		printf("The selected cards contain no pair.");
 	}
 	return 0;
 }
@@ -53,8 +56,8 @@ int test_pair(const int c[5])
 {
     int i, j, pair=0;
     for (i = 0; i < 4; i++){
-        for (j = 0; j < 4-i; j++){
-            if (c[j] == c[j+1]){
+        for (j = i+1; j < 5; j++){
+            if (c[i] == c[j]){
                 pair ++;
                 
             }
