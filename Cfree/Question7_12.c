@@ -10,7 +10,7 @@ main()
 {
 	const char *suit[4] = {"Heart", "Diamond", "Club", "Spade"};
 	const char *face[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-	int deck[4][13] = {0}, chosen[5]={0};
+	int deck[4][13] = {0}, chosen[CARD]={0};
 	int row, column, pair, count = 0;
 	
 	srand(time(NULL));
@@ -42,7 +42,7 @@ void select(int wDeck[][13])
 {
 	int row, column, cardNumber = 1;
 	
-	while (cardNumber <= 5){
+	while (cardNumber <= CARD){
 		row = rand() % 4;
 		column = rand() % 13;
 		if (wDeck[row][column] == 0){
@@ -52,11 +52,11 @@ void select(int wDeck[][13])
 	}
 }
 
-int test_pair(const int c[5])
+int test_pair(const int c[CARD])
 {
     int i, j, pair=0;
-    for (i = 0; i < 4; i++){
-        for (j = i+1; j < 5; j++){
+    for (i = 0; i < CARD - 1; i++){
+        for (j = i+1; j < CARD; j++){
             if (c[i] == c[j]){
                 pair ++;
                 
