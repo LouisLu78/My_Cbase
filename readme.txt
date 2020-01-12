@@ -6,5 +6,5 @@ I mostly focus on Python. Anyway, as a chemist with more than 20 years of expert
 my knowledge in computer science is mainly rooted in application level.
 
 2020-01-11 I almost finish reading a textbook of C. And I believe I have acquired the ability to read C codes and write
-some simple programs, which I think it enough for me as a chemist. I will try to apply the computer knowledge that I have
+some simple programs, which I think enough for me as a chemist. I will try to apply the computer knowledge that I have
 studied in the last three months in the field of chemistry.
