@@ -2,10 +2,10 @@
 # define STUDENTS 3
 # define EXAMS 4
 
-void function0(const int grades[][EXAMS], int pupils, int tests);  /* printArray */
-void function1(const int grades[][EXAMS], int pupils, int tests);  /* minimum */
-void function2(const int grades[][EXAMS], int pupils, int tests); /* maximum */
-void function3(const int grades[][EXAMS], int pupils, int tests); /* average */
+void printArray(const int grades[][EXAMS], int pupils, int tests);  
+void minimum(const int grades[][EXAMS], int pupils, int tests); 
+void maximum(const int grades[][EXAMS], int pupils, int tests); 
+void average(const int grades[][EXAMS], int pupils, int tests); 
 
 
 main()
@@ -14,7 +14,7 @@ main()
  const int studentGrades[STUDENTS][EXAMS]= {{77,68,86,73},
                                             {96,87,89,78},
                                             {70,90,86,81}};
- void (*f[4])(const int grades[][EXAMS], int pupils, int tests)={function0, function1, function2, function3};
+ void (*f[4])(const int grades[][EXAMS], int pupils, int tests) = {printArray, minimum, maximum, average};
  int choice;
  printf("Please enter a number between 0 and 4: ");
  scanf("%d", &choice);
@@ -32,7 +32,7 @@ main()
  return 0;
 }
 
-void function0(const int grades[][EXAMS], int pupils, int tests)
+void printArray(const int grades[][EXAMS], int pupils, int tests)
 {
     int i, j;
     
@@ -44,7 +44,7 @@ void function0(const int grades[][EXAMS], int pupils, int tests)
     }
 }
 
-void function1(const int grades[][EXAMS], int pupils, int tests)
+void minimum(const int grades[][EXAMS], int pupils, int tests)
 {
     int i, j;
     int lowGrade = 100;
@@ -60,7 +60,7 @@ void function1(const int grades[][EXAMS], int pupils, int tests)
 
 
 
-void function2(const int grades[][EXAMS], int pupils, int tests)
+void maximum(const int grades[][EXAMS], int pupils, int tests)
 {
     int i, j;
     int highGrade = 0;
@@ -74,19 +74,19 @@ void function2(const int grades[][EXAMS], int pupils, int tests)
     printf("The maximum score is %d.\n", highGrade);
 }
 
-void function3(const int grades[][EXAMS], int pupils, int tests)
+void average(const int grades[][EXAMS], int pupils, int tests)
 {
     int i, j;
-    float sum = 0.0;
-    int average;
+    int sum = 0;
+    float average;
     
     for (i = 0; i < pupils; i++){
         for (j = 0; j < tests; j++){
            sum += grades[i][j];
         }        
-        average = sum / tests;        
+        average = (float)sum / tests; 		 
         printf("The average score of student[%d] is %.2f.\n", i, average);
-        sum = 0.0;
+        sum = 0;
     }
 }
 
