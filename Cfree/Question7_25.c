@@ -42,6 +42,7 @@ void printArray(const int grades[][EXAMS], int pupils, int tests)
             printf("%-5d", grades[i][j]);
         }
     }
+    printf("\n\n");
 }
 
 void minimum(const int grades[][EXAMS], int pupils, int tests)
@@ -56,6 +57,7 @@ void minimum(const int grades[][EXAMS], int pupils, int tests)
         }
     }
     printf("The minimum score is %d.\n", lowGrade);
+    printf("\n");
 }
 
 
@@ -72,22 +74,23 @@ void maximum(const int grades[][EXAMS], int pupils, int tests)
         }
     }
     printf("The maximum score is %d.\n", highGrade);
+    printf("\n");
 }
 
 void average(const int grades[][EXAMS], int pupils, int tests)
 {
-    int i, j;
-    int sum = 0;
+    int i, j, sum;
     float average;
     
     for (i = 0; i < pupils; i++){
+        sum = 0;
         for (j = 0; j < tests; j++){
            sum += grades[i][j];
         }        
         average = (float)sum / tests; 		 
         printf("The average score of student[%d] is %.2f.\n", i, average);
-        sum = 0;
     }
+    printf("\n");
 }
 
 
