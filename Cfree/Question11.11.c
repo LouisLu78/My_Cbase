@@ -17,7 +17,7 @@ main()
     }
     else{
         for (i = 0; i < 100; i++){            
-            fwrite(&Customer, sizeof(struct person), 1, fPtr);
+            fprintf(fPtr, "%s %s %s\n", Customer.lastname, Customer.firstname, Customer.age);
         }
         fclose(fPtr);
     }/*end of part a */
