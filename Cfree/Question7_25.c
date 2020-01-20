@@ -66,6 +66,7 @@ void maximum(const int grades[][EXAMS], int pupils, int tests)
 {
     int i, j;
     int highGrade = 0;
+
     for (i = 0; i < pupils; i++){
         for (j = 0; j < tests; j++){
            if (grades[i][j] > highGrade){
