@@ -17,12 +17,10 @@ main()
     strNodePtr tailPtr;
     
     headPtr = malloc(sizeof(strNode));
-    
     headPtr->data = 's';
     headPtr->nextPtr = NULL;
     
     tailPtr = malloc(sizeof(strNode));
-    
     tailPtr->data = 'k';
     tailPtr->nextPtr = NULL;
 
@@ -37,10 +35,8 @@ main()
 
 void concatenate(strNodePtr *aPtr, strNodePtr *bPtr)
 {
-
     if (aPtr != NULL ){
-    	
-        (*aPtr)->nextPtr = *bPtr;
 
+        (*aPtr)->nextPtr = *bPtr;
     }
 }
