@@ -40,3 +40,5 @@ void concatenate(strNodePtr *aPtr, strNodePtr *bPtr)
         (*aPtr)->nextPtr = *bPtr;
     }
 }
+/* The key solution to this question is to initiate the struct pointer
+by assigning memory as shown in line 19 and 23. */
