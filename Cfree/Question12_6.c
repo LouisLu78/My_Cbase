@@ -15,14 +15,21 @@ main()
 {
     strNodePtr headPtr;
     strNodePtr tailPtr;
-    headPtr->data = "s";
+    
+    headPtr = malloc(sizeof(strNode));
+    
+    headPtr->data = 's';
     headPtr->nextPtr = NULL;
-    tailPtr->data = "k";
+    
+    tailPtr = malloc(sizeof(strNode));
+    
+    tailPtr->data = 'k';
     tailPtr->nextPtr = NULL;
+
     concatenate(&headPtr, &tailPtr);
 
     while (headPtr != NULL){
-        printf("c%--->", headPtr->data);
+        printf("%c --->", headPtr->data);
         headPtr = headPtr->nextPtr;
     }
     return 0; 
@@ -30,12 +37,10 @@ main()
 
 void concatenate(strNodePtr *aPtr, strNodePtr *bPtr)
 {
-    strNodePtr newPtr;
-    newPtr = malloc(sizeof(strNode));
-    if (newPtr != NULL ){
-        
-        newPtr->nextPtr = *bPtr;
-        (*aPtr)->nextPtr = newPtr;
+
+    if (aPtr != NULL ){
+    	
+        (*aPtr)->nextPtr = *bPtr;
 
     }
 }
