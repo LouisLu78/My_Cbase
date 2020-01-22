@@ -29,12 +29,13 @@ main()
 
     i = 0;
     while (startPtr != NULL){
+    		printf("%d--->", startPtr->data);        
             sum += startPtr->data;
             startPtr = startPtr->nextPtr;
             i++;
         }
     average = (float) sum / i;
-    printf("The sum of the chain numbers is %d.\n",sum);
+    printf("\nThe sum of the chain numbers is %d.\n",sum);
     printf("The average of the chain numbers is %.2f.\n",average);
 
     return 0;
@@ -42,6 +43,28 @@ main()
 
 void insert(IntNodePtr *sPtr, int value)
 {
+    IntNodePtr newPtr;
+    IntNodePtr previousPtr;
+    IntNodePtr currentPtr;
 
+    newPtr = malloc(sizeof(IntNode));
+    newPtr->data = value;
+    newPtr->nextPtr = NULL;
+
+    previousPtr = NULL;
+    currentPtr = *sPtr;
+
+    while (currentPtr != NULL && value > currentPtr->data){
+        previousPtr = currentPtr;
+        currentPtr = currentPtr->nextPtr;
+    }
+
+    if (previousPtr == NULL){
+        newPtr->nextPtr = *sPtr;
+        *sPtr = newPtr;
+    }
+    else {
+        previousPtr->nextPtr = newPtr;
+        newPtr->nextPtr = currentPtr;
+    }
 }
-/* to be finished later */
