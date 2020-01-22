@@ -62,7 +62,7 @@ void insert(IntNodePtr *sPtr, int value)
     if (previousPtr == NULL){
         newPtr->nextPtr = *sPtr;
         *sPtr = newPtr;
-    }
+    } /* This is the case of stack. */
     else {
         previousPtr->nextPtr = newPtr;
         newPtr->nextPtr = currentPtr;
