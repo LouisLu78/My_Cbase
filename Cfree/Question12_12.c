@@ -1,5 +1,6 @@
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 
 struct charNode {
     char data;
@@ -25,7 +26,35 @@ main()
 
 void convertToPostfix(char infix[], char postfix[])
 {
+    stackNodePtr expression;
 
+    int i, j = 0;
+    push(&expression, '(');
+    strcat(infix, ")");
+    for (i = 0; infix[i] != '\0'; i++){
+        if (isdigit(infix[i])){
+            postfix[j] = infix[i];
+        }
+        else if (infix[i]) == '('){
+            push(&expression, infix[i]);
+        }
+        else if(isOperator(infix[i])){
+            if((isEmpty(expression) == 0) && precedence(expression->data, infix[i]) >= 0){
+                postfix[j] = pop(&expression);
+            }
+            else{
+                push(&expression, infix[i]);
+            }
+        }
+        else if (infix[i]) == ')'){
+            while(pop(&expression) != '('){
+                postfix[j] = pop(&expression);
+                j++;
+            }
+            pop(&expression);
+        }
+        j++;
+    }
 }
 
 int isOperator(char c)
@@ -54,12 +83,7 @@ int precedence(char operator1, char operator2)
         }
     }
     flag = frontOperator - backOperator;
-    if (flag > 0){
-        flag = 1;
-    }
-    else if (flag < 0){
-        flag = -1;
-    }
+
     return flag;
 }
 
