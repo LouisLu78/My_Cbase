@@ -81,7 +81,7 @@ int isOperator(char c)
         }
     }
     return flag;
-}
+}/* This function works properly.*/
 
 int precedence(char operator1, char operator2)
 {
@@ -100,7 +100,7 @@ int precedence(char operator1, char operator2)
     flag = headOperator - tailOperator;
 
     return flag;
-}
+}/* This function works properly.*/
 
 void push(stackNodePtr *topPtr, char value)
 {
