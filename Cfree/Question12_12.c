@@ -38,32 +38,36 @@ void convertToPostfix(char infix[], char postfix[])
 {
     stackNodePtr expression;
 
-    int i, j = 0;
+    int i = 0;
     push(&expression, '(');
     strcat(infix, ")");
-    for (i = 0; infix[i] != '\0'; i++){
-        if (isdigit(infix[i])){
-            postfix[j] = infix[i];
-        }
-        else if (infix[i] == '('){
-            push(&expression, infix[i]);
-        }
-        else if(isOperator(infix[i])){
-            if((isEmpty(expression) == 0) && precedence(expression->data, infix[i]) >= 0){
-                postfix[j] = pop(&expression);
+    if((isEmpty(expression) == 0){
+        for (i = 0; infix[i] != '\0'; i++){
+            if (isdigit(infix[i])){
+                postfix[i+1] = infix[i];
             }
-            else{
+            else if (infix[i] == '('){
                 push(&expression, infix[i]);
+            }/* the rest need to be reviewed later. */
+
+
+            else if(isOperator(infix[i])){
+                if((isEmpty(expression) == 0) && precedence(expression->data, infix[i]) >= 0){
+                    postfix[j] = pop(&expression);
+                }
+                else{
+                    push(&expression, infix[i]);
+                }
             }
-        }
-        else if (infix[i] == ')'){
-            while(pop(&expression) != '('){
-                postfix[j] = pop(&expression);
-                j++;
+            else if (infix[i] == ')'){
+                while(pop(&expression) != '('){
+                    postfix[j] = pop(&expression);
+                    j++;
+                }
+                pop(&expression);
             }
-            pop(&expression);
+            j++;
         }
-        j++;
     }
 }
 
