@@ -39,34 +39,31 @@ void convertToPostfix(char infix[], char postfix[])
     stackNodePtr expression;
 
     int i = 0;
+    char value;
     push(&expression, '(');
     strcat(infix, ")");
-    if((isEmpty(expression) == 0){
+    if(isEmpty(expression) == 0){
         for (i = 0; infix[i] != '\0'; i++){
             if (isdigit(infix[i])){
                 postfix[i+1] = infix[i];
             }
             else if (infix[i] == '('){
                 push(&expression, infix[i]);
-            }/* the rest need to be reviewed later. */
-
-
+            }
             else if(isOperator(infix[i])){
-                if((isEmpty(expression) == 0) && precedence(expression->data, infix[i]) >= 0){
-                    postfix[j] = pop(&expression);
+                value = stackTop(expression);
+                if((isOperator(value)) && precedence(value, infix[i]) >= 0){
+                    postfix[i] = pop(&expression);
                 }
-                else{
-                    push(&expression, infix[i]);
-                }
+                push(&expression, infix[i]);
             }
             else if (infix[i] == ')'){
-                while(pop(&expression) != '('){
-                    postfix[j] = pop(&expression);
-                    j++;
+                while(stackTop(expression) != '('){
+                    postfix[i] = pop(&expression);
+                    i++;
                 }
                 pop(&expression);
             }
-            j++;
         }
     }
 }
