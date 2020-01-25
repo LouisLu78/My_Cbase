@@ -21,19 +21,15 @@ void printStack(stackNodePtr topPtr);
 
 main()
 {
-    stackNodePtr stackPtr = NULL;
-
     int i;
     char infix[] = {'(','3','+','5',')','*','4','-','2','^','5','/','8'};
-    char postfix[30];
+    char postfix[20];
 
     convertToPostfix(infix, postfix);
 
     for (i = 0; postfix[i] != '\0'; i++){
-        push(&stackPtr, postfix[i]);
+        printf("%c",postfix[i]);
     }
-
-    printStack(stackPtr);
 
     return 0;
 }
@@ -110,7 +106,7 @@ void push(stackNodePtr *topPtr, char value)
     newPtr->data = value;
     newPtr->nextPtr = *topPtr;
     *topPtr = newPtr;
-}
+}/* This function works properly.*/
 
 char pop(stackNodePtr *topPtr)
 {
@@ -123,18 +119,20 @@ char pop(stackNodePtr *topPtr)
     free(tempPtr);
 
     return value;
-}
+}/* This function works properly.*/
 
 char stackTop(stackNodePtr topPtr)
 {
-    return topPtr->data;
-}
+    if (topPtr != NULL){
+        return topPtr->data;
+    }
+}/* This function is revised. */
 
 
 int isEmpty(stackNodePtr topPtr)
 {
     return topPtr == NULL;
-}
+}/* This function works properly.*/
 
 void printStack(stackNodePtr topPtr)
 {
@@ -142,4 +140,4 @@ void printStack(stackNodePtr topPtr)
         printf("%c",topPtr->data);
         topPtr = topPtr->nextPtr;
      }
-}
+}/* This function works properly.*/
