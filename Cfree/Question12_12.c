@@ -21,6 +21,20 @@ void printStack(stackNodePtr topPtr);
 
 main()
 {
+    stackNodePtr stackPtr = NULL;
+
+    int i;
+    char infix[] = {'(','3','+','5',')','*','4','-','2','^','5','/','8'};
+    char postfix[30];
+
+    convertToPostfix(infix, postfix);
+
+    for (i = 0; postfix[i] != '\0'; i++){
+        push(&stackPtr, postfix[i]);
+    }
+
+    printStack(stackPtr);
+
     return 0;
 }
 
@@ -35,7 +49,7 @@ void convertToPostfix(char infix[], char postfix[])
         if (isdigit(infix[i])){
             postfix[j] = infix[i];
         }
-        else if (infix[i]) == '('){
+        else if (infix[i] == '('){
             push(&expression, infix[i]);
         }
         else if(isOperator(infix[i])){
@@ -46,7 +60,7 @@ void convertToPostfix(char infix[], char postfix[])
                 push(&expression, infix[i]);
             }
         }
-        else if (infix[i]) == ')'){
+        else if (infix[i] == ')'){
             while(pop(&expression) != '('){
                 postfix[j] = pop(&expression);
                 j++;
@@ -71,18 +85,19 @@ int isOperator(char c)
 
 int precedence(char operator1, char operator2)
 {
-    int flag, frontOperator, backOperator;
+    int i, flag, headOperator, tailOperator;
     char operators[] = {'+','-','*','/','^','%'};
     int value[] = {1,1,2,2,3,2};
+    
     for (i = 0; operators[i] != '\0'; i++){
         if (operator1 == operators[i]){
-            frontOperator = value[i];
+            headOperator = value[i];
         }
         if (operator2 == operators[i]){
-           backOperator = value[i];
+           tailOperator = value[i];
         }
     }
-    flag = frontOperator - backOperator;
+    flag = headOperator - tailOperator;
 
     return flag;
 }
@@ -128,4 +143,3 @@ void printStack(stackNodePtr topPtr)
         topPtr = topPtr->nextPtr;
      }
 }
-/* the rest part of the program will be finished during the spring festival. */
