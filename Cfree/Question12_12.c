@@ -22,7 +22,7 @@ void printStack(stackNodePtr topPtr);
 main()
 {
     int i;
-    char infix[] = {'(','3','+','5',')','*','4','-','2','^','5','/','8'};
+    char infix[] = "(3+5)*4-2^5/8";                            /*equal to {'(','3','+','5',')','*','4','-','2','^','5','/','8'}*/
     char postfix[20];
 
     convertToPostfix(infix, postfix);
