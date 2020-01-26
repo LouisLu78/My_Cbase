@@ -21,18 +21,20 @@ void printStack(stackNodePtr topPtr);
 
 main()
 {
+    stackNodePtr tempNode = NULL;
     int i;
     char infix[] = "(3+5)*4-2^5/8";                            /*equal to {'(','3','+','5',')','*','4','-','2','^','5','/','8'}*/
     char postfix[20];
 
     convertToPostfix(infix, postfix);
 
-    for (i = 0; postfix[i] != '\0'; i++){
-        printf("%c",postfix[i]);
+    for (i = strlen(postfix)-1; i >= 0; i--){
+        push(&tempNode, postfix[i]);
     }
-
+    printStack(tempNode);
+    
     return 0;
-}
+}/* I am so happy that I finish this program successfully. */
 
 void convertToPostfix(char infix[], char postfix[])
 {
