@@ -28,7 +28,7 @@ main()
 
     convertToPostfix(infix, postfix);
 
-    for (i = strlen(postfix)-1; i >= 0; i--){
+    for (i = strlen(postfix) - 1; i >= 0; i--){
         push(&tempNode, postfix[i]);
     }
     printStack(tempNode);
