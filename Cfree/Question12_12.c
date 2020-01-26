@@ -67,7 +67,7 @@ void convertToPostfix(char infix[], char postfix[])
             }
         }   
     }
-}
+}/* this function finally runs correctly. */
 
 int isOperator(char c)
 {
