@@ -36,7 +36,7 @@ main()
         if (headPtr != NULL){
             out = dequeue(&headPtr, &tailPtr);
             leave[out+1] = leave[out] + time();
-        }
+        }/* this part need revision later. */
 
         arrival[in+1] = arrival[in] + time();
         in++;
