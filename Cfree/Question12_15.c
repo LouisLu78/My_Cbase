@@ -26,7 +26,7 @@ main()
 
     int sum = 0, in = 0, out = 0;
     int time0, service;
-    int arrival[SIZE], leave[SIZE], wait[SIZE];
+    int arrival[SIZE], leave[SIZE], wait[SIZE], customers[SIZE];
 
     srand(time(NULL));
     enqueue(&headPtr, &tailPtr, in);
@@ -39,6 +39,7 @@ main()
             leave[out+1] = leave[out] + time();
         }/* this part need revision later. */
 
+        customers[in] = length(headPtr, tailPtr);
         arrival[in+1] = arrival[in] + time();
         in++;
         enqueue(&headPtr, &tailPtr, in);
