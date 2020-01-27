@@ -15,6 +15,7 @@ typedef IntNode *IntNodePtr;
 
 void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, Int value);
 int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr);
+int length(IntNodePtr headPtr, IntNodePtr tailPtr);
 int time(void)
 int max(int data[]);
 
@@ -98,3 +99,18 @@ int max(int data[])
     }
     return Max;
 }/* to be completed later */
+
+int length(IntNodePtr headPtr, IntNodePtr tailPtr)
+{
+    int count = 1;
+    if (headPtr == NULL){
+        return 0;
+    }
+    else{
+        while (headPtr != tailPtr){
+            headPtr = headPtr->nextPtr;
+            count++;
+        }
+    }
+    return count;
+}
