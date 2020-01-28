@@ -3,7 +3,7 @@
 # include <time.h>
 
 # define TIME 720
-# define SIZE 500
+
 
 struct intNode {
     int data;
@@ -25,28 +25,31 @@ main()
     IntNodePtr tailPtr = NULL;
 
     int in = 0, out = 0;
-    int i;
-    int arrival[SIZE], leave[SIZE], wait[SIZE], customers[SIZE];
-
-    srand(time(NULL));
+    int i, sum;
+    int arrival[TIME] = {0}, leave[TIME] = {0}, wait[TIME] = {0}, customers[TIME] = {0};
     
+    srand(time(NULL));    
+     
     enqueue(&headPtr, &tailPtr, in);
     arrival[0] = duration();
-    leave[0] = arrival[0];
-
+    leave[0] = arrival[0] + duration();
+    sum = leave[0];
     while (arrival[in] <= TIME){
+    	
+    	customers[in] = length(headPtr);
+        arrival[in+1] = arrival[in] + duration();
+        
         if (headPtr != NULL){
             out = dequeue(&headPtr, &tailPtr);
-            leave[out+1] = leave[out] + duration();
-        }/* this part need revision later. */
+            leave[out] = sum;
+        }
 
-        customers[in] = length(headPtr);
-        arrival[in+1] = arrival[in] + duration();
         in++;
         enqueue(&headPtr, &tailPtr, in);
+        sum = arrival[in];
     }
     
-    for (i = 0; i < SIZE; i++){
+    for (i = 0; i < TIME; i++){
         wait[i] = leave[i] - arrival[i];
     }
     
@@ -70,7 +73,7 @@ void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, int value)
          (*tailPtr)->nextPtr = newPtr;
     }
     *tailPtr = newPtr;
-}
+}/* This function works properly.*/
 
 int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr)
 {
@@ -87,24 +90,24 @@ int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr)
     free(tempPtr);
 
     return value;
-}
+}/* This function works properly.*/
 
 int duration(void)
 {
     return 1 + rand() % 4;
-}
+}/* This function works properly.*/
 
 int max(int data[])
 {
     int i, Max = 0;
 
-    for (i = 0; i < SIZE; i++){
+    for (i = 0; i < TIME; i++){
         if (data[i] > Max){
             Max = data[i];
         }
     }
     return Max;
-}
+}/* This function works properly.*/
 
 int length(IntNodePtr headPtr)
 {
@@ -119,4 +122,4 @@ int length(IntNodePtr headPtr)
         }
 		return count;
     }
-}
+}/* This function works properly.*/
