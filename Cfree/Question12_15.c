@@ -13,10 +13,10 @@ struct intNode {
 typedef struct intNode IntNode;
 typedef IntNode *IntNodePtr;
 
-void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, Int value);
+void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, int value);
 int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr);
-int length(IntNodePtr headPtr, IntNodePtr tailPtr);
-int time(void)
+int length(IntNodePtr headPtr);
+int duration(void);
 int max(int data[]);
 
 main()
@@ -24,34 +24,39 @@ main()
     IntNodePtr headPtr = NULL;
     IntNodePtr tailPtr = NULL;
 
-    int sum = 0, in = 0, out = 0;
-    int time0, service;
+    int in = 0, out = 0;
+    int i;
     int arrival[SIZE], leave[SIZE], wait[SIZE], customers[SIZE];
 
     srand(time(NULL));
+    
     enqueue(&headPtr, &tailPtr, in);
-    arrival[0] = time();
-    leave[0] = arrival[0]
+    arrival[0] = duration();
+    leave[0] = arrival[0];
 
     while (arrival[in] <= TIME){
         if (headPtr != NULL){
             out = dequeue(&headPtr, &tailPtr);
-            leave[out+1] = leave[out] + time();
+            leave[out+1] = leave[out] + duration();
         }/* this part need revision later. */
 
-        customers[in] = length(headPtr, tailPtr);
-        arrival[in+1] = arrival[in] + time();
+        customers[in] = length(headPtr);
+        arrival[in+1] = arrival[in] + duration();
         in++;
         enqueue(&headPtr, &tailPtr, in);
     }
+    
     for (i = 0; i < SIZE; i++){
         wait[i] = leave[i] - arrival[i];
     }
+    
+    printf("It takes %d minutes for the customer who awaits the most time.\n", max(wait));
+    printf("The longest queue contains %d persons.", max(customers));
 
     return 0;
 }
 
-void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, Int value)
+void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, int value)
 {
     IntNodePtr newPtr;
     newPtr = malloc(sizeof(IntNode));
@@ -62,9 +67,9 @@ void enqueue(IntNodePtr *headPtr, IntNodePtr *tailPtr, Int value)
         *headPtr = newPtr;
     }
     else{
-        newPtr = (*tailPtr)->nextPtr;
+         (*tailPtr)->nextPtr = newPtr;
     }
-    *tailPtr =newPtr;
+    *tailPtr = newPtr;
 }
 
 int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr)
@@ -84,7 +89,7 @@ int dequeue(IntNodePtr *headPtr, IntNodePtr *tailPtr)
     return value;
 }
 
-int time(void)
+int duration(void)
 {
     return 1 + rand() % 4;
 }
@@ -99,19 +104,19 @@ int max(int data[])
         }
     }
     return Max;
-}/* to be completed later */
+}
 
-int length(IntNodePtr headPtr, IntNodePtr tailPtr)
+int length(IntNodePtr headPtr)
 {
-    int count = 1;
+    int count = 0;
     if (headPtr == NULL){
         return 0;
     }
     else{
-        while (headPtr != tailPtr){
+        while (headPtr != NULL){
             headPtr = headPtr->nextPtr;
             count++;
         }
+		return count;
     }
-    return count;
 }
