@@ -41,12 +41,11 @@ main()
         
         if (headPtr != NULL){
             out = dequeue(&headPtr, &tailPtr);
-            leave[out] = sum;
+            leave[out+1] = leave[out] + duration();
         }
 
         in++;
         enqueue(&headPtr, &tailPtr, in);
-        sum = arrival[in];
     }
     
     for (i = 0; i < TIME; i++){
