@@ -25,7 +25,7 @@ main()
     IntNodePtr tailPtr = NULL;
 
     int in = 0, out = 0;
-    int i, sum;
+    int i;
     int arrival[TIME] = {0}, leave[TIME] = {0}, wait[TIME] = {0}, customers[TIME] = {0};
     
     srand(time(NULL));    
@@ -33,7 +33,7 @@ main()
     enqueue(&headPtr, &tailPtr, in);
     arrival[0] = duration();
     leave[0] = arrival[0] + duration();
-    sum = leave[0];
+
     while (arrival[in] <= TIME){
     	
     	customers[in] = length(headPtr);

@@ -25,7 +25,7 @@ main()
     }
 
     printf("%d\n", length(headPtr));
-    printf("first letter is %c.\n", dequeue(&headPtr, &tailPtr));
+    printf("The first letter is %c.\n", dequeue(&headPtr, &tailPtr));
     printf("%d\n", length(headPtr));
 
     return 0;
