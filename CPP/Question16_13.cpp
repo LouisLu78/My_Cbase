@@ -69,11 +69,11 @@ private:
 
 int main()
 {
-    Invoice sampleInvoice("CPU_Intel", "I3_8100", 5, 630);
+    Invoice sampleInvoice("I3_8100", "CPU_Intel", 5, 630);
 
     cout << "The code of the component is " << sampleInvoice.getPartCode() << ";" << endl;
     cout << "The description of the component is " << sampleInvoice.getPartDescription() << ";" <<  endl;
-    cout << "The price is " << sampleInvoice.getPrice() << " RMB;" << endl;
+    cout << "The price is " << sampleInvoice.getPrice() << " RMB per piece;" << endl;
     cout << "with the amount of " << sampleInvoice.getAmount() << " pieces;" << endl;
     cout << "In total we spent " << sampleInvoice.getPayment() << " RMB." << endl;
 
