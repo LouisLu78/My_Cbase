@@ -56,7 +56,8 @@ int getDay()
 
 void displayDate()
 {
-    cout << "\nThe date is: " << getYear() << "/" << getMonth() << "/" << getDay() << "." << endl;
+    cout << "\nThe date is: " << getYear() << "/" << getMonth()
+     << "/" << getDay() << "." << endl;
 }
 };
 
