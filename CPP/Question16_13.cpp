@@ -54,9 +54,9 @@ public:
         return price;
     }
 
-    int getPayment(int invioceAmount, int invoicePrice )  //alias to to the function name of getInvoiceAmount as suggested in the textbook.
+    int getPayment()  //alias to to the function name of getInvoiceAmount as suggested in the textbook.
     {
-        return invioceAmount * invoicePrice;
+        return amount * price;
     }
 
 private:
@@ -75,7 +75,7 @@ int main()
     cout << "The description of the component is " << sampleInvoice.getPartDescription() << ";" <<  endl;
     cout << "The price is " << sampleInvoice.getPrice() << " RMB;" << endl;
     cout << "with the amount of " << sampleInvoice.getAmount() << " pieces;" << endl;
-    cout << "In total we spent " << sampleInvoice.getPayment(5, 630) << " RMB." << endl;
+    cout << "In total we spent " << sampleInvoice.getPayment() << " RMB." << endl;
 
     return 0;
 }
