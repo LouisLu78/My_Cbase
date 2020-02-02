@@ -21,8 +21,7 @@ public:
     {
         
        realPart = a.realPart + b.realPart;
-       imaginaryPart = a.imaginaryPart + b.imaginaryPart;
-        
+       imaginaryPart = a.imaginaryPart + b.imaginaryPart;        
 
     }
 
@@ -44,17 +43,17 @@ int main()
 {
     Complex complex_a(3.5, 2.7);
     Complex complex_b(2.6, 8.1);
+    Complex c; 
 
     complex_a.print();
     complex_b.print();
+	c.print();
+	
+    c.add(complex_a, complex_b);
+    c.print();
 
-    Complex complex_add;
-    complex_add.add(complex_a, complex_b);
-    complex_add.print();
-
-    Complex complex_sub;
-    complex_sub.subtract(complex_a, complex_b);
-    complex_sub.print();
+    c.subtract(complex_a, complex_b);
+    c.print();
 
     return 0;
 }
