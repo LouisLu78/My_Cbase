@@ -102,7 +102,7 @@ void nextDay()
             month0++;
             day0 = 1;            
         }
-        else if (!isLeapYear(getYear()) &&day0 > 28){
+        else if (!isLeapYear(getYear()) && day0 > 28){
             month0++;            
             day0 = 1;            
         }
