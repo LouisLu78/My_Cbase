@@ -70,15 +70,13 @@ void nextDay()
     month0 = getMonth();
     year0 = getYear();
 
-	day0++;
-    
+	day0++;    
 
     if (month0 == 1 || month0 == 3 || month0 == 5 || month0 == 7 || month0 == 8
-    || month0 == 10){
+        || month0 == 10){
         if (day0 > 31){
         	month0++;            
-            day0 = 1;
-            
+            day0 = 1;            
         }
     }
     
@@ -111,8 +109,8 @@ void nextDay()
     setDay(day0);
     setMonth(month0);
     setYear(year0);
-
 }
+
 };
 
 int main()
