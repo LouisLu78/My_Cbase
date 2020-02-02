@@ -130,10 +130,8 @@ int main()
     date2.nextDay();
     date2.displayDate();
 
-
-
     return 0;
-}//I have aleady solved this question successfully!
+}//I have already solved this question successfully!
 
 int isLeapYear(int year)
 {
