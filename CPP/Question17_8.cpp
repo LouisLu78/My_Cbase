@@ -133,7 +133,7 @@ int main()
 
 int isLeapYear(int year)
 {
-    int flag=0;
+    int flag = 0;
     if (year % 100 == 0){
         if (year % 400 == 0){
            flag = 1;
