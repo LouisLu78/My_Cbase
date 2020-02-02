@@ -48,7 +48,7 @@ int getMonth()
 
 void setDay(int formalDay)
 {
-    day = (formalDay < 1 || formalDay > 31) ? 1 : formalDay;
+    day = (formalDay < 0 ) ? 1 : formalDay;
 }
 
 int getDay()
@@ -64,58 +64,76 @@ void displayDate()
 
 void nextDay()
 {
-    int day0, month0;
+    int day0, month0, year0;
+    
 	day0 = getDay();
     month0 = getMonth();
+    year0 = getYear();
 
-
-    setDay(day0++);
+	day0++;
+    
 
     if (month0 == 1 || month0 == 3 || month0 == 5 || month0 == 7 || month0 == 8
-    || month0 == 10 || month0 == 12){
+    || month0 == 10){
         if (day0 > 31){
-            setMonth(month0++);
-            setDay(day0 - 31);
+        	month0++;            
+            day0 = 1;
+            
         }
     }
+    
+    else if (month0 == 12){
+    	if (day0 > 31){
+    		year0++;
+			month0 = 1;            
+            day0 = 1;
+		}	
+	}
 
     else if (month0 == 4 || month0 == 6 || month0 == 9 || month0 == 11){
         if (day0 > 30){
-            setMonth(month0++);
-            setDay(day0 - 30);
+            month0++;            
+            day0 = 1;            
         }
     }
 
-    else{
+    else if (month0 == 2) {
         if (isLeapYear(getYear()) && day0 > 29){
-            setMonth(month0++);
-            setDay(day0 - 29);
+            month0++;
+            day0 = 1;            
         }
-        else if (day0 > 28){
-            setMonth(month0++);
-            setDay(day0 - 28);
+        else if (!isLeapYear(getYear()) &&day0 > 28){
+            month0++;            
+            day0 = 1;            
         }
     }
+    
+    setDay(day0);
+    setMonth(month0);
+    setYear(year0);
 
 }
 };
 
 int main()
 {
-    Date date1(2020, 1, 31);
+    Date date1(2020, 1, 28);
+    date1.displayDate();
     
-    while (date1.getMonth() <= 2 && date1.getDay() <= 10){     	
+    while (date1.getMonth() <= 2){
     	date1.nextDay();
     	date1.displayDate();
 	}
 	 
-    Date date2(2018, 12, 9);
+    Date date2(2018, 12, 31);
+    date2.displayDate();
+    date2.nextDay();
     date2.displayDate();
 
 
 
     return 0;
-}
+}//I have aleady solved this question successfully!
 
 int isLeapYear(int year)
 {
