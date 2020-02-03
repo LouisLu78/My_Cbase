@@ -63,54 +63,51 @@ void displayDate()
 }
 
 void nextDay()
-{
-    int day0, month0, year0;
-    
-	day0 = getDay();
-    month0 = getMonth();
-    year0 = getYear();
+{    
+	day = getDay();
+    month = getMonth();
+    year = getYear();
 
-	day0++;    
+	day++;    
 
-    if (month0 == 1 || month0 == 3 || month0 == 5 || month0 == 7 || month0 == 8
-        || month0 == 10){
-        if (day0 > 31){
-        	month0++;            
-            day0 = 1;            
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
+        || month == 10){
+        if (day > 31){
+        	month++;            
+            day = 1;            
         }
     }
     
-    else if (month0 == 12){
-    	if (day0 > 31){
-    		year0++;
-			month0 = 1;            
-            day0 = 1;
+    else if (month == 12){
+    	if (day > 31){
+    		year++;
+			month = 1;            
+            day = 1;
 		}	
 	}
 
-    else if (month0 == 4 || month0 == 6 || month0 == 9 || month0 == 11){
-        if (day0 > 30){
-            month0++;            
-            day0 = 1;            
+    else if (month == 4 || month == 6 || month == 9 || month == 11){
+        if (day > 30){
+            month++;            
+            day = 1;            
         }
     }
 
-    else if (month0 == 2) {
-        if (isLeapYear(getYear()) && day0 > 29){
-            month0++;
-            day0 = 1;            
+    else if (month == 2) {
+        if (isLeapYear(getYear()) && day > 29){
+            month++;
+            day = 1;            
         }
-        else if (!isLeapYear(getYear()) && day0 > 28){
-            month0++;            
-            day0 = 1;            
+        else if (!isLeapYear(getYear()) && day > 28){
+            month++;            
+            day = 1;            
         }
     }
     
-    setDay(day0);
-    setMonth(month0);
-    setYear(year0);
+    setDay(day);
+    setMonth(month);
+    setYear(year);
 }
-
 };
 
 int main()
@@ -123,7 +120,7 @@ int main()
     	date1.displayDate();
 	}
 	 
-    Date date2(2018, 12, 31);
+    Date date2(2019, 12, 31);
     date2.displayDate();
     date2.nextDay();
     date2.displayDate();
