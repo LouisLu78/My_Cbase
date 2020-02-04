@@ -93,20 +93,18 @@ public:
                 month++;
                 day = 1;
             }
-        }
+        }        
 
-        if (month == 12 && day > date[month]) {
+        else if (day > date[month]) {            
 
-            year++;
-
-        }
-
-        if (month != 2 && day > date[month]) {
-
+            if (month == 12) {
+                year++;
+            }
             month++;
             day = 1;
-
         }
+
+        month = (month % 12 == 0) ? 12 : month % 12;
 
         setDay(day);
         setMonth(month);
