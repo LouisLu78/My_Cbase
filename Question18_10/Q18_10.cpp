@@ -84,7 +84,7 @@ public:
 	{
 		int i, flag = 0;
 
-		for (i = 0; i < length; i++) {
+		for (i = 0; i < 101; i++) {
 			if (a[i]) {
 				flag = 1;
 				cout << i << " ";
@@ -103,7 +103,7 @@ public:
 	{
 		int i, flag = 1;
 		
-		for (i = 0; i < m.length; i++) {
+		for (i = 0; i < 101; i++) {
 			if (m.a[i] != n.a[i]) {
 				flag = 0;
 				break;
@@ -136,6 +136,11 @@ int main()
 	iset2.printSet();
 
 	iset2.intersectionOfSets(iset3, iset4);
+	iset2.printSet();
+
+	for (i = 0; i < 101; i += 5) {
+		iset2.insertElement(i);
+	}
 	iset2.printSet();
 
 	return 0;
