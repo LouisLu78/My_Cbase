@@ -17,19 +17,19 @@ public:
         imaginaryPart = im;
     }   
 
-    void add(Complex a, Complex b)
+    void add(Complex b)
     {
         
-       realPart = a.realPart + b.realPart;
-       imaginaryPart = a.imaginaryPart + b.imaginaryPart;        
+       realPart += b.realPart;
+       imaginaryPart += b.imaginaryPart;        
 
     }
 
-    void subtract(Complex a, Complex b)
+    void subtract(Complex b)
     {
         
-        realPart = a.realPart - b.realPart;
-        imaginaryPart = a.imaginaryPart - b.imaginaryPart;
+        realPart -= b.realPart;
+        imaginaryPart -= b.imaginaryPart;
         
     }
 
@@ -48,11 +48,12 @@ int main()
     complex_a.print();
     complex_b.print();
 	c.print();
+	cout << endl; 
 	
-    c.add(complex_a, complex_b);
-    c.print();
+    complex_a.add(complex_b);
+    complex_a.print();
 
-    c.subtract(complex_a, complex_b);
+    c.subtract(complex_a);
     c.print();
 
     return 0;

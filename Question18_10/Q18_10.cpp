@@ -18,7 +18,7 @@ public:
 		for (i = 0; i < length; i++) {
 			a[i] = false;
 		}
-	}
+	}//rechecked
 
 	IntegerSet(bool s[], int size)
 	{
@@ -30,35 +30,35 @@ public:
 		for (i = length; i < 101; i++) {
 			a[i] = false;
 		}
-	}
+	}//rechecked
 
-	void unionOfSets(IntegerSet m, IntegerSet n)
+	void unionOfSets(IntegerSet n)
 	{
 		int i;
 		
 		for (i = 0; i < 101; i++) {
-			if (m.a[i] == true || n.a[i] == true) {
+			if (a[i] == true || n.a[i] == true) {
 				a[i] = true;
 			}
 			else {
 				a[i] = false;
 			}
 		}
-	}
+	}//rechecked
 
-	void intersectionOfSets(IntegerSet m, IntegerSet n)
+	void intersectionOfSets(IntegerSet n)
 	{
 		int i;
 
 		for (i = 0; i < 101; i++) {
-			if (m.a[i] == true && n.a[i] == true) {
+			if (a[i] == true && n.a[i] == true) {
 				a[i] = true;
 			}
 			else {
 				a[i] = false;
 			}
 		}		
-	}
+	}//rechecked
 
 	void insertElement(int k)
 	{
@@ -68,7 +68,7 @@ public:
 		else {
 			cout << "The number is not in the range from 0 to 100." << endl;
 		}
-	}
+	}//rechecked
 
 	void deleteElement(int m)
 	{
@@ -78,7 +78,7 @@ public:
 		else {
 			cout << "The number is not in the range from 0 to 100." << endl;
 		}
-	}
+	}//rechecked
 
 	void printSet() const
 	{
@@ -97,28 +97,29 @@ public:
 			cout << "--";
 		}
 		cout << endl;
-	}
+	}//it works properly.
 
-	int isEqualTo(IntegerSet m, IntegerSet n)
+	int isEqualTo(IntegerSet m)
 	{
 		int i, flag = 1;
 		
 		for (i = 0; i < 101; i++) {
-			if (m.a[i] != n.a[i]) {
+			if (a[i] != m.a[i]) {
 				flag = 0;
 				break;
 			}
 		}		
 		return flag;
 	}
-};
+};//this function is revised.
 
 int main()
 {
 	int i;
-	bool data[6] = {0,1,0,0,1,1};
-	bool test[3] = { 1,1,1 };
+
 	bool s[101] = { false };
+	bool data[6] = {0,1,0,0,1,1};
+	bool test[3] = { 1,1,1 };	
 
 	IntegerSet iset1(s, 101);
 	iset1.printSet();
@@ -126,17 +127,20 @@ int main()
 	IntegerSet iset2;
 	iset2.printSet();
 
+	cout << "The two objects are equal(1) or not(0) to each other? " << iset2.isEqualTo(iset1) << endl;
+
 	IntegerSet iset3(data, 6);	
 	iset3.printSet();
 
 	IntegerSet iset4(test, 3);
 	iset4.printSet();
 
-	iset2.unionOfSets(iset3, iset4);
-	iset2.printSet();
+	iset3.unionOfSets(iset4);
+	iset3.printSet();
 
-	iset2.intersectionOfSets(iset3, iset4);
-	iset2.printSet();
+	IntegerSet iset5(data, 6);
+	iset5.intersectionOfSets(iset4);
+	iset5.printSet();
 
 	for (i = 0; i < 101; i += 5) {
 		iset2.insertElement(i);
