@@ -1,4 +1,4 @@
-*exe
-*ipch
+*.exe
+*.ipch
 /Debug
 /.vs
