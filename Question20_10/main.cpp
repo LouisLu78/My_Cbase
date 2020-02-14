@@ -22,7 +22,7 @@ int main()
 	sa.debit(amount);
 	cout << "\nThe balance of account sa is changed to " << sa.getBalance() << endl;
 
-	cout << "\nThe balance of account ca is changed to " << ca.getBalance() << endl;
+	cout << "\nThe balance of account ca is " << ca.getBalance() << endl;
 	ca.credit(amount);
 	cout << "\nThe balance of account ca is changed to " << ca.getBalance() << endl;	
 
