@@ -109,7 +109,7 @@ ostream& operator<<(ostream& output, RationalNumber& right)
 		output << "-" << abs(right.numerator) << "/" << abs(right.denominator);
 	}
 
-	else if(right.numerator * right.denominator > 0) {
+	else{
 		output << abs(right.numerator) << "/" << abs(right.denominator);
 	}
 	return output;
