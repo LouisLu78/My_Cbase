@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "SavingsAccount.h"
 #include "CheckingAccount.h"
 
@@ -37,7 +38,18 @@ int main()
 		cout << "\nThe balance of account ca is changed to " << ca.getBalance() << endl;
 	}
 	else {
-		cout << "\nThe account ca has no enough money!" << endl;
+		cout << "\nThe account ca has no enough money!\n\n" << endl;
+	}
+
+	vector <Account*> accounts(3);
+
+	accounts[0] = new Account(1500);
+	accounts[1] = new SavingsAccount(2500, 0.07);
+	accounts[2] = new CheckingAccount(3500, 2.1);
+
+	for (size_t i = 0; i < accounts.size(); i++) {
+		accounts[i]->debit(amount);
+		cout << "The balance of the account is " << accounts[i]->getBalance() << endl;
 	}
 
 	return 0;
