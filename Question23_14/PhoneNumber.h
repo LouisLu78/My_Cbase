@@ -13,7 +13,7 @@ private:
 	string line;
 
 public:
-	PhoneNumber(string&, string&, string&);
+	PhoneNumber(const string & = "321", const string & = "456", const string & = "7890");
 
 friend ostream& operator<<(ostream&, const PhoneNumber&);
 friend istream& operator>>(istream&, PhoneNumber&);

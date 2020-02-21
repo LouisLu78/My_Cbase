@@ -5,7 +5,7 @@
 
 using namespace std;
 
-PhoneNumber::PhoneNumber(string &aCode, string &exCode, string &lineNumber)
+PhoneNumber::PhoneNumber(const string &aCode, const string &exCode, const string &lineNumber)
 {
 	areaCode = aCode;
 	exchangeCode = exCode;
@@ -21,23 +21,35 @@ ostream& operator<<(ostream& output, const PhoneNumber& number)
 
 istream& operator>>(istream& input, PhoneNumber& number)
 {
+	string aCode;
+	string exCode;
+	string lineNumber;
+	
 	input.ignore();
-	input >> setw(3) >> number.areaCode;
+	input >> setw(3) >> aCode;
 	input.ignore(2);
-	input >> setw(3) >> number.exchangeCode;
+	input >> setw(3) >> exCode;
 	input.ignore();
-	input >> setw(4) >> number.line;
+	input >> setw(4) >> lineNumber;	
 	
-	if (input.gcount() != 14) {
+	if ((aCode.size() + exCode.size() + lineNumber.size())!= 10) {
 		input.clear(ios::failbit);
+		return input;
 	}
-	else if (number.areaCode[0] == '0' || number.areaCode[0] == '1'
-		|| number.exchangeCode[0] == '0' || number.exchangeCode[0] == '1') {
+	if (aCode[0] == '0' || aCode[0] == '1'
+		|| exCode[0] == '0' || exCode[0] == '1') {
 		input.clear(ios::failbit);
+		return input;
 	}
-	else if (number.areaCode[1] == '0' || number.areaCode[1] == '1') {
+	else if (aCode[1] != '0' && aCode[1] != '1') {
 		input.clear(ios::failbit);
+		return input;
 	}
 	
-	return input;
+	number.areaCode = aCode;
+	number.exchangeCode = exCode;
+	number.line = lineNumber;
+
+	return input;		
+		
 }// to-be-finished-tomorrow
