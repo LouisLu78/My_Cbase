@@ -36,7 +36,7 @@ istream& operator>>(istream& input, PhoneNumber& number)
 		input.clear(ios::failbit);
 		return input;
 	}
-	if (aCode[0] == '0' || aCode[0] == '1'
+	else if (aCode[0] == '0' || aCode[0] == '1'
 		|| exCode[0] == '0' || exCode[0] == '1') {
 		input.clear(ios::failbit);
 		return input;
@@ -52,4 +52,4 @@ istream& operator>>(istream& input, PhoneNumber& number)
 
 	return input;		
 		
-}// to-be-finished-tomorrow
+}

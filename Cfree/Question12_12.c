@@ -32,7 +32,7 @@ main()
         push(&tempNode, postfix[i]);
     }
     printStack(tempNode);
-    
+
     return 0;
 }/* I am so happy that I finish this program successfully. */
 
@@ -67,7 +67,7 @@ void convertToPostfix(char infix[], char postfix[])
                 }
                 pop(&expression);
             }
-        }   
+        }
     }
 }/* this function finally runs correctly. */
 
@@ -88,7 +88,7 @@ int precedence(char operator1, char operator2)
     int i, flag, headOperator, tailOperator;
     char operators[] = {'+','-','*','/','^','%'};
     int value[] = {1,1,2,2,3,2};
-    
+
     for (i = 0; operators[i] != '\0'; i++){
         if (operator1 == operators[i]){
             headOperator = value[i];
