@@ -41,8 +41,8 @@ double Package::calculateCost() const
 
 void Package::print() const
 {
-	cout << "\nThe sender of the package is " << sender << endl;
-	cout << "\nThe receiver of the package is " << receiver << endl;
-	cout << "\n with the address: " << address << "; postcode: " << postcode << endl;
+	cout << "\nThe sender of the package is " << sender << ";" << endl;
+	cout << "\nThe receiver of the package is " << receiver << ";" << endl;
+	cout << "\n with the address: " << address << "; postcode: " << postcode << ";" << endl;
 	cout << "\n The postage is totally: " << calculateCost() << " RMB." << endl;
 }
