@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     const int size = 7;
-    int k, sum = 0;
+    int k, sum;
     int data[] = {3, 25, 42, 85, 69, 741, 89};
     vector<int>calculateData;
 
@@ -15,9 +15,9 @@ int main()
     }
 
     if (size % 2 == 1){
-        cout << "The last element is individual." << endl;
+        cout << "The last element is individual.\n" << endl;
         k = calculateData.size() - 1;
-        for (size_t j = 0; j < calculateData.size(); j++){
+        for (size_t j = 0; j < calculateData.size(); j++, k--){
            sum = calculateData[j] + calculateData[k];
            if (j < k){
             cout << sum << " ";
@@ -25,7 +25,6 @@ int main()
            else if (j == k){
             cout << sum / 2;
            }
-           k--;
         }
         cout << endl;
     }
