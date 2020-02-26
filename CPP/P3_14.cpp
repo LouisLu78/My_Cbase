@@ -27,7 +27,7 @@ int main()
     vector<string>stVec;
 
     for(size_t i = 0; i < st.size(); i++){
-        if(!isspace(st[i])){
+        if(st[i] && !isspace(st[i])){
             temp += st[i];
         }
         else{
@@ -35,7 +35,6 @@ int main()
             temp = "";
         }
     }
-    stVec.push_back(temp);
 
     for (size_t i = 0; i < stVec.size(); i++){
         cout << stVec[i] << " ";
