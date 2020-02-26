@@ -23,7 +23,7 @@ const vector<string> &stToVec(string &st, vector<string>&stVec)
 
     for(size_t i = 0; i < st.size(); i++)
     {
-        if(st[i] && !isspace(st[i]))
+        if(!isspace(st[i]))
         {
             temp += st[i];
         }
@@ -33,6 +33,7 @@ const vector<string> &stToVec(string &st, vector<string>&stVec)
             temp = "";
         }
     }
+    stVec.push_back(temp);
 
     return stVec;
 }
@@ -41,7 +42,7 @@ int main()
 {
 
     string st = "His eye was so cold and hostile. Others, it seemed to say, might like Archie, but not he.";
-    string temp;
+
     vector<string>vecSt;
 
     removePunct(st);

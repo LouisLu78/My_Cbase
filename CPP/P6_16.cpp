@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool comp(vector<int>&ivec1, vector<int>&ivec2)
+bool comp(const vector<int>&ivec1, const vector<int>&ivec2)
 {
     int size;
     size = (ivec1.size() < ivec2.size()?ivec1.size():ivec2.size());
@@ -18,27 +18,22 @@ bool comp(vector<int>&ivec1, vector<int>&ivec2)
 
 int main()
 {
-    vector<int> intVec1;
-    vector<int> intVec2;
-    int temp1, temp2;
+    int data1[] = {1,1,2,8};
+    int data2[] = {1,1,2,8,3,5,8};
+    int data3[] = {1,1,2,81,3,5,8};
 
-    while(cin >> temp1){
-        intVec1.push_back(temp1);
-    }
-    cout << endl;
-
-    for(size_t i = 0; i < intVec1.size(); i++){
-        cout << intVec1[i] << " ";
-    }
-
-    while(cin >> temp2){
-            intVec2.push_back(temp2);
-    }
-    for(size_t i = 0; i < intVec2.size(); i++){
-        cout << intVec2[i] << " ";
-    }
+    vector<int>intVec1(data1, data1+4);
+    vector<int>intVec2(data2, data2+7);
+    vector<int>intVec3(data3, data3+7);
 
     if (comp(intVec1, intVec2)){
+        cout << "The two vectors are same." << endl;
+    }
+    else{
+        cout << "They are different!" << endl;
+    }
+
+    if (comp(intVec1, intVec3)){
         cout << "The two vectors are same." << endl;
     }
     else{

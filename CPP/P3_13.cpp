@@ -5,16 +5,16 @@ using namespace std;
 
 int main()
 {
-    const int size = 7;
+    int temp;
     int k, sum;
-    int data[] = {3, 25, 42, 85, 69, 741, 89};
+
     vector<int>calculateData;
 
-    for (int i = 0; i < size; i++){
-        calculateData.push_back(data[i]);
+    while(cin >> temp){
+        calculateData.push_back(temp);
     }
 
-    if (size % 2 == 1){
+    if (calculateData.size() % 2 == 1){
         cout << "The last element is individual.\n" << endl;
         k = calculateData.size() - 1;
         for (size_t j = 0; j < calculateData.size(); j++, k--){
@@ -29,7 +29,7 @@ int main()
         cout << endl;
     }
     else{
-        for (size_t j = 0; j < calculateData.size(); j+=2){
+        for (size_t j = 0; j < calculateData.size(); j += 2){
             sum = calculateData[j] + calculateData[j+1];
             cout << sum << " ";
         }

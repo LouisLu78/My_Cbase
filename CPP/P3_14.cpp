@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void removePunct(string& originalString)
+void removePunct(const string& originalString)
 {
     string newSt;
     for (size_t i = 0; i < originalString.size(); i++){
