@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1582803940 source:d:\my_cbase\cpp\q23_14\q23_14_minorchange\phonenumber.cpp
+	<iostream>
+	<iomanip>
+	<sstream>
+	<string>
+	"PhoneNumber.h"
+
+1582803014 d:\my_cbase\cpp\q23_14\q23_14_minorchange\phonenumber.h
+	<iostream>
+	<string>
+
+1582803070 source:d:\my_cbase\cpp\q23_14\q23_14_minorchange\main.cpp
+	<iostream>
+	<string>
+	"PhoneNumber.h"
+

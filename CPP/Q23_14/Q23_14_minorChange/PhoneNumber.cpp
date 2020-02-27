@@ -13,7 +13,7 @@ PhoneNumber::PhoneNumber(const string &aCode, const string &exCode, const string
 	line = lineNumber;
 }
 
-ostream& operator<<(ostream& output, const PhoneNumber& number)
+ostream &operator<<(ostream& output, const PhoneNumber& number)
 {
 	output << "(" << number.areaCode << ") " << number.exchangeCode << "-" << number.line;
 
@@ -26,17 +26,18 @@ istream& operator>>(istream& input, PhoneNumber& number)
 	string exCode;
 	string lineNumber;
 	string temp;
+
 	getline(input, temp);
-	istringstream inputA(temp);
-	
-	inputA.ignore();
-	inputA >> setw(3) >> aCode;
-	inputA.ignore(2);
-	inputA >> setw(3) >> exCode;
-	inputA.ignore();
-	inputA >> setw(4) >> lineNumber;	
-	
-	if (temp.size() != 14) {
+	istringstream stream(temp);
+
+	stream.ignore();
+	stream >> setw(3) >> aCode;
+	stream.ignore(2);
+	stream >> setw(3) >> exCode;
+	stream.ignore();
+	stream >> setw(4) >> lineNumber;
+
+	if (temp.size()!= 14) {
 		input.clear(ios::failbit);
 		return input;
 	}
@@ -49,11 +50,11 @@ istream& operator>>(istream& input, PhoneNumber& number)
 		input.clear(ios::failbit);
 		return input;
 	}
-	
+
 	number.areaCode = aCode;
 	number.exchangeCode = exCode;
 	number.line = lineNumber;
 
-	return input;		
-		
+	return input;
+
 }

@@ -17,7 +17,7 @@ void removePunct(string& originalString)
     originalString = newSt;
 }
 
-const vector<string> &stToVec(string &st, vector<string>&stVec)
+const vector<string> &stToVec(const string &st, vector<string>&stVec)
 {
     string temp;
 
