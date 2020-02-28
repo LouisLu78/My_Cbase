@@ -39,6 +39,10 @@ int main()
     else{
         cout << "They are different!" << endl;
     }
+    cout << "\nFor intVec1:" << endl;
+    cout << "The last element is :" << intVec1.back() << endl;
+    cout << "The first element is : " << intVec1.front() << endl;
+    cout << "The third element is : " << intVec1.at(2) << endl;
 
     return 0;
 }
