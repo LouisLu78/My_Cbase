@@ -5,10 +5,10 @@
 using namespace std;
 typedef vector<string> SVEC;
 
-SVEC phoneWords(int number)
+SVEC &phoneWords(long number, SVEC &word)
 {
-    SVEC word, wordTemp;
-    int tempHead, tempEnd;
+    SVEC wordTemp;
+    long tempHead, tempEnd;
     string s;
 
     string digit[] = {"", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PRS",
@@ -22,7 +22,7 @@ SVEC phoneWords(int number)
     }
     else{
         tempHead = number / 10;
-        wordTemp = phoneWords(tempHead);
+        wordTemp = phoneWords(tempHead, word);
         word.clear();
         tempEnd = number % 10;
         if (tempEnd > 1){
@@ -38,8 +38,9 @@ SVEC phoneWords(int number)
 
 int main()
 {
-    int n = 5347936;
-    SVEC result = phoneWords(n);
+    long n = 5347936;
+    SVEC result;
+    phoneWords(n, result);
 
     for (size_t i = 0; i < result.size(); i++){
         cout << result[i] << " ";
