@@ -9,16 +9,15 @@ SVEC phoneWords(int number)
 {
     SVEC word, wordTemp;
     int tempHead, tempEnd;
-    string s;
+    const string s;
 
     string digit[] = {"", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PRS",
                     "TUV", "WXY"};
+
     if (number > 1 && number < 10){
         for (string::iterator i = digit[number].begin(); i < digit[number].end(); i++){
-            word.push_back(s+*i);
-            s = "";
+            word.push_back(s + *i);
         }
-
     }
     else{
         tempHead = number / 10;
@@ -38,12 +37,12 @@ SVEC phoneWords(int number)
 
 int main()
 {
-    int n = 5347936;
+    int n = 53479365;
     SVEC result = phoneWords(n);
 
     for (size_t i = 0; i < result.size(); i++){
         cout << result[i] << " ";
-        if (i % 25 == 24){
+        if (i % 20 == 19){
             cout << endl;
         }
     }

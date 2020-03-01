@@ -9,42 +9,51 @@ SVEC &phoneWords(long number, SVEC &word)
 {
     SVEC wordTemp;
     long tempHead, tempEnd;
-    string s;
+    const string s;
 
     string digit[] = {"", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PRS",
-                    "TUV", "WXY"};
-    if (number > 1 && number < 10){
-        for (string::iterator i = digit[number].begin(); i < digit[number].end(); i++){
-            word.push_back(s+*i);
-            s = "";
-        }
+                      "TUV", "WXY"
+                     };
 
+    if (number > 1 && number < 10)
+    {
+        for (string::iterator i = digit[number].begin(); i < digit[number].end(); i++)
+        {
+            word.push_back(s + *i);
+        }
     }
-    else{
+    else
+    {
         tempHead = number / 10;
         wordTemp = phoneWords(tempHead, word);
         word.clear();
         tempEnd = number % 10;
-        if (tempEnd > 1){
-            for (size_t i = 0; i < wordTemp.size(); i++) {
-                for (string::iterator iter = digit[tempEnd].begin(); iter < digit[tempEnd].end(); iter++){
+        if (tempEnd > 1)
+        {
+            for (size_t i = 0; i < wordTemp.size(); i++)
+            {
+                for (string::iterator iter = digit[tempEnd].begin(); iter < digit[tempEnd].end(); iter++)
+                {
                     word.push_back(wordTemp[i] + *iter);
                 }
             }
         }
     }
+
     return word;
 }
 
 int main()
 {
-    long n = 5347936;
+    long n = 534793625;
     SVEC result;
     phoneWords(n, result);
 
-    for (size_t i = 0; i < result.size(); i++){
+    for (size_t i = 0; i < result.size(); i++)
+    {
         cout << result[i] << " ";
-        if (i % 25 == 24){
+        if (i % 25 == 24)
+        {
             cout << endl;
         }
     }

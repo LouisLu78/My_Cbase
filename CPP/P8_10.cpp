@@ -10,7 +10,6 @@ int main()
     ifstream input;
     string s;
     vector<string>svec;
-    vector<string>lvec;
 
     input.open("test.txt");
     while(input >> s){
