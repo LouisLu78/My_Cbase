@@ -8,35 +8,37 @@ using namespace std;
 
 typedef vector<string> VST;
 
-bool isLongerFive(const string& word)
+inline bool isLongerFive(const string& word)
 {
     return word.size() > 5;
 }
 
 int main()
 {
+    int word = 0;
     string s;
     ifstream input;
     VST vec;
 
-    input.open("test.txt");
+    input.open("Romeo.txt");
     while(input >> s)
     {
         vec.push_back(s);
     }
+    cout << "The book contains "<< vec.size() << " words.\n" << endl;
 
     VST::iterator iter = vec.begin();
-    VST::iterator it;
 
-    for(size_t i = 0; i < vec.size(); i++)
+    while(iter != vec.end())
     {
-        it = find_if(iter, vec.end(), isLongerFive);
-        if(it != vec.end())
+        iter = find_if(iter, vec.end(), isLongerFive);
+        if(iter != vec.end())
         {
-            cout << *it << " ";
-            iter = it + 1;
+            cout << *iter++ << " ";
+            word++;
         }
     }
+    cout << "\n\nThe book contains "<< word << " words which is composed with more than 5 letters." << endl;
 
     return 0;
 }
