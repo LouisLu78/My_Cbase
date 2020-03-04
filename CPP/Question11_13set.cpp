@@ -9,14 +9,14 @@ SST phoneWords(int number)
 {
     SST word, wordTemp;
     int tempHead, tempEnd;
-    const string s;
+    string s;
 
     string digit[] = {"", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PRS",
                     "TUV", "WXY"};
 
     if (number > 1 && number < 10){
         for (string::iterator i = digit[number].begin(); i < digit[number].end(); i++){
-            word.insert(s + *i);
+            word.insert(s = *i);
         }
     }
     else{
