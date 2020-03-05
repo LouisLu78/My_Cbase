@@ -15,8 +15,8 @@ int main()
     Louis.print();
     cout << endl;
 
-    HeartRates Amy("Gao", "Amy", 2003, 4, 13);
-    Amy.print();
+    HeartRates Jasmin("Hu", "Jasmin", 1991, 11, 15);
+    Jasmin.print();
 
     return 0;
 }

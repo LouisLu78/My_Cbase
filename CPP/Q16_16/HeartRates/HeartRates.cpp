@@ -105,7 +105,8 @@ void HeartRates::print()
 
     cout << "The client: " << firstname << " " << lastname << ";" << endl;
     cout << "Birthday: " << year << "-" << setfill('0') << setw(2) << month
-            << "-" << setfill('0') << setw(2) << day << ", with age of "<< getAge() << ";" << endl;
+            << "-" << setfill('0') << setw(2) << day << ";" << endl;
+    cout <<"Age: "<< getAge() << ";" << endl;
     cout << "The suggested maximum heart rates is in the range of " << lower << " and " << upper << "." << endl;
 
 }

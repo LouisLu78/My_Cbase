@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1583391479 source:d:\my_cbase\cpp\q16_16\heartrates\main.cpp
+1583392459 source:d:\my_cbase\cpp\q16_16\heartrates\main.cpp
 	<iostream>
 	<string>
 	"HeartRates.h"
@@ -8,7 +8,7 @@
 	<iostream>
 	<string>
 
-1583392212 source:d:\my_cbase\cpp\q16_16\heartrates\heartrates.cpp
+1583392772 source:d:\my_cbase\cpp\q16_16\heartrates\heartrates.cpp
 	<iostream>
 	<iomanip>
 	<string>
