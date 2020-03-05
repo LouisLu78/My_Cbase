@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "HeartRates.h"
 
@@ -6,6 +7,11 @@ using namespace std;
 
 int main()
 {
+    int theYear, theMonth, today;
+    getDate(theYear, theMonth, today);
+    cout << "Today is: " << theYear << "-" << setfill('0') << setw(2) << theMonth
+            << "-" << setfill('0') << setw(2) << today << ".\n" << endl;
+
     HeartRates Louis("Lu", "Louis", 1978, 4, 19);
     Louis.print();
     cout << endl;

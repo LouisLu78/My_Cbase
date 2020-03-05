@@ -32,7 +32,7 @@ public:
     int getDay() const;
     int getAge();
     int getMaxHeartRates();
-    void print() ;
+    void print();
 };
 
 #endif // HEARTRATES_H_INCLUDED
