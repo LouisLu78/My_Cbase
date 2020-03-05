@@ -6,9 +6,11 @@
 
 using namespace std;
 
+void getDate(int &, int &, int &);
+
 class HeartRates
 {
-Private:
+private:
     string lastname;
     string firstname;
     int year;
@@ -19,9 +21,9 @@ Private:
 public:
     HeartRates(const string &, const string &, int = 2000, int = 1, int = 1);
     void setLastname(string&);
-    string &getLastname() const;
+    string getLastname() const;
     void setFirstname(string&);
-    string &getFirstname() const;
+    string getFirstname() const;
     void setYear(int);
     int getYear() const;
     void setMonth(int);
@@ -30,6 +32,7 @@ public:
     int getDay() const;
     int getAge();
     int getMaxHeartRates();
+    void print() ;
 };
 
 #endif // HEARTRATES_H_INCLUDED

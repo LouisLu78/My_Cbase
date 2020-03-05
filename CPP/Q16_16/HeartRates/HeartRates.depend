@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1583391479 source:d:\my_cbase\cpp\q16_16\heartrates\main.cpp
+	<iostream>
+	<string>
+	"HeartRates.h"
+
+1583392128 d:\my_cbase\cpp\q16_16\heartrates\heartrates.h
+	<iostream>
+	<string>
+
+1583392212 source:d:\my_cbase\cpp\q16_16\heartrates\heartrates.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<ctime>
+	"HeartRates.h"
+
