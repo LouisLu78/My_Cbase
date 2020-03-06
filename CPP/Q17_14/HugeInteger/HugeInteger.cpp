@@ -110,7 +110,7 @@ istream &operator>>(istream& input, HugeInteger& right)
     input >> s;
     int j = 0;
     for(size_t i = s.size()-1; i >= 0; i--, j++){
-        right.data[j] = 57 - s[i];
+        right.data[j] = s[i] - 48;
     }
     return input;
 }
