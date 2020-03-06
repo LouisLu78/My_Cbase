@@ -99,17 +99,16 @@ public:
 		cout << endl;
 	}//it works properly.
 
-	int isEqualTo(IntegerSet m)
+	bool isEqualTo(IntegerSet m)
 	{
-		int i, flag = 1;
-		
-		for (i = 0; i < 101; i++) {
+				
+		for (int i = 0; i < 101; i++) {
 			if (a[i] != m.a[i]) {
-				flag = 0;
-				break;
+
+				return false;				
 			}
 		}		
-		return flag;
+		return true;
 	}
 };//this function is revised.
 

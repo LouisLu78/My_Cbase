@@ -6,25 +6,29 @@ using namespace std;
 
 class HugeInteger
 {
-    friend istream &operator>>(istream& input, HugeInteger& right);
-    friend ostream &operator<<(ostream& output, HugeInteger& right);
+    friend istream &operator>>(istream& , HugeInteger& );
+    friend ostream &operator<<(ostream& , const HugeInteger& );
 
 private:
     const int size = 40;
     int data[size];
 
 public:
-    HugeInteger(int);
 
-    int subtract();
-    bool operator==(const HugeInteger &right) const;
-    bool operator!=(const HugeInteger &right) const;
-    bool operator>(const HugeInteger &right) const;
-    bool operator>=(const HugeInteger &right) const;
-    bool operator<(const HugeInteger &right) const;
-    bool operator<=(const HugeInteger &right) const;
+    HugeInteger(long );
+
+    HugeInteger operator-(const HugeInteger &);
+
+    bool operator==(const HugeInteger &) const;
+    bool operator!=(const HugeInteger &right) const
+    {
+        return !(*this == right);
+    }
+    bool operator>(const HugeInteger &) const;
+    bool operator>=(const HugeInteger &) const;
+    bool operator<(const HugeInteger &) const;
+    bool operator<=(const HugeInteger &) const;
 
 };
-
 
 #endif // HUGEINTEGER_H_INCLUDED
