@@ -1,4 +1,15 @@
 # depslib dependency file v1.0
-1514140574 source:d:\my_cbase\cpp\q17_14\hugeinteger\main.cpp
+1583589139 source:d:\my_cbase\cpp\q17_14\hugeinteger\main.cpp
 	<iostream>
+	<string>
+	"HugeInteger.h"
+
+1583588742 d:\my_cbase\cpp\q17_14\hugeinteger\hugeinteger.h
+	<iostream>
+	<string>
+
+1583589731 source:d:\my_cbase\cpp\q17_14\hugeinteger\hugeinteger.cpp
+	<iostream>
+	<string>
+	"HugeInteger.h"
 
