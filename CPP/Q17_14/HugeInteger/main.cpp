@@ -29,7 +29,7 @@ int main()
     hiA = hiD;
     cout << hiA << endl;
 
-    HugeInteger hiF(35625);
+    HugeInteger hiF(-35625);
     hiF.printArray();
     cout << hiF << endl;
 

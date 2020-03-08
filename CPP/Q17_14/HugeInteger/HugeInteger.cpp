@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include <string>
 #include "HugeInteger.h"
 
@@ -12,19 +13,33 @@ HugeInteger::HugeInteger()
     }
 }
 
-HugeInteger::HugeInteger(long int value)
+HugeInteger::HugeInteger(long int value0)
 {
     for (int i = 0; i < size; i++)
     {
         data[i] = 0;
     }
 
-    for (int j = 0; j < size; j++)
+    long int value = abs(value0);
+
+    for (int i = 0; i < size; i++)
     {
         if (value != 0)
         {
-            data[j] = value % 10;
+            data[i] = value % 10;
             value /= 10;
+        }
+    }
+
+    if (value0 < 0)
+    {
+        for (int i = size - 1; i >= 0; i--)
+        {
+            if (data[i] != 0)
+            {
+                data[i] *= -1;
+                break;
+            }
         }
     }
 }
@@ -46,7 +61,10 @@ HugeInteger::HugeInteger(const string &st)
 
     for(int i = (st.length() - 1), j = 0; i >= 0; i--, j++)
     {
-        data[j] = st[i] - '0';
+        if(isdigit(st[i]))
+        {
+            data[j] = st[i] - '0';
+        }
     }
 }
 
@@ -162,7 +180,8 @@ bool HugeInteger::operator<=(const HugeInteger &right) const
 
 void HugeInteger::printArray() const
 {
-    for (int i = size - 1; i >= 0; i--){
+    for (int i = size - 1; i >= 0; i--)
+    {
         cout << data[i] << " ";
     }
     cout << endl;
