@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1583759829 source:d:\my_cbase\cpp\q18_10\playcard\main.cpp
+	<iostream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Card.h"
+	"DeckOfCards.h"
+
+1583762572 d:\my_cbase\cpp\q18_10\playcard\card.h
+	<iostream>
+	<string>
+
+1583761758 source:d:\my_cbase\cpp\q18_10\playcard\card.cpp
+	<iostream>
+	<string>
+	"Card.h"
+
+1583761278 d:\my_cbase\cpp\q18_10\playcard\deckofcards.h
+	<iostream>
+	<string>
+	<vector>
+	"Card.h"
+

@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Card.cpp" />
 		<Unit filename="Card.h" />
+		<Unit filename="DeckOfCards.cpp" />
 		<Unit filename="DeckOfCards.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

@@ -4,22 +4,21 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Card.h"
 
 using namespace std;
 
-class DeckOfCard
+class DeckOfCards
 {
 private:
     vector<string>deck;
     int currentCard;
 
 public:
-    DeckOfCard(vector<string>, int);
+    DeckOfCards();
     void shuffle();
     string & dealCard();
     bool moreCards();
 };
-
-
 
 #endif // DECKOFCARDS_H_INCLUDED

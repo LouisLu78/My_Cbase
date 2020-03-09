@@ -8,18 +8,18 @@ using namespace std;
 
 class Card
 {
+friend class DeckOfCards;
+
 private:
-    int face;
-    int suit;
+    const int face;
+    const int suit;
 
 public:
-    Card(int, int);
+    Card(int =13 , int = 4);
     string sface[];
     string ssuit[];
-    string &toString() const;
+    string toString(string&, string&) const;
 
 };
-
-
 
 #endif // CARD_H_INCLUDED
