@@ -18,7 +18,7 @@ public:
     Card(int =13 , int = 4);
     string sface[];
     string ssuit[];
-    string toString(string&, string&) const;
+    string toString(string&, string&);
 
 };
 
