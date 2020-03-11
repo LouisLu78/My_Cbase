@@ -35,9 +35,11 @@ void DeckOfCards::shuffle()
     }
 }
 
-string &DeckOfCards::dealCard()
+string DeckOfCards::dealCard()
 {
-    return deck[currentCard++];
+    string temp = deck[currentCard];
+    currentCard++;
+    return temp;
 }
 
 bool DeckOfCards::moreCards()

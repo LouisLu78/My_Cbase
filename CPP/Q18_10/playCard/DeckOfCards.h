@@ -17,7 +17,7 @@ private:
 public:
     DeckOfCards();
     void shuffle();
-    string & dealCard();
+    string dealCard();
     bool moreCards();
 };
 

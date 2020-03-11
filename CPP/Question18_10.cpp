@@ -16,7 +16,7 @@ string toString(string&a, string&b)
 
 void shuffle(vector<string>&deck)
 {
-    for (int i = 0; i <1000; i++){
+    for (int i = 0; i <10000; i++){
         int m = rand() % 52;
         int n = rand() % 52;
         string temp;

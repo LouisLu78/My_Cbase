@@ -14,8 +14,11 @@ int main()
     DeckOfCards docA;
     docA.shuffle();
 
-    cout << docA.dealCard() << endl;
+    while (docA.moreCards())
+    {
+        cout << docA.dealCard() << endl;
+    }
 
-    cout << "Hello world!" << endl;
+    cout << "I solved the question!" << endl;
     return 0;
 }

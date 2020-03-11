@@ -4,13 +4,15 @@
 
 using namespace std;
 
+string Card::sface[] = {"A", "2", "3", "4", "5",
+                        "6", "7", "8", "9", "10", "J", "Q", "K"};
+
+string Card::ssuit[] = {"Heart", "Diamond", "Club", "Spade"};
+
 Card::Card(int cardSort, int cardFlower)
         :face(cardSort), suit(cardFlower)
 {
-    string sface[face] = {"A", "2", "3", "4", "5",
-                        "6", "7", "8", "9", "10", "J", "Q", "K"};
 
-    string ssuit[suit] = {"Heart", "Diamond", "Club", "Spade"};
 }
 
 string Card::toString(string&a, string&b)

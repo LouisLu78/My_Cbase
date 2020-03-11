@@ -13,11 +13,11 @@ friend class DeckOfCards;
 private:
     const int face;
     const int suit;
-
+    static string sface[];
+    static string ssuit[];
 public:
     Card(int =13 , int = 4);
-    string sface[];
-    string ssuit[];
+
     string toString(string&, string&);
 
 };
