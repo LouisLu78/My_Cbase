@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 #include <ctime>
@@ -48,7 +49,7 @@ int main()
     shuffle(svec);
 
     for (int i = 0; i < 52; i++){
-        cout << svec[i] << "; ";
+        cout << left << setw(20) << svec[i];
         if (i % 4 == 3){
             cout << endl;
         }
