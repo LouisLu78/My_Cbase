@@ -5,10 +5,13 @@ using namespace std;
 
 int main()
 {
-    int data[] = {3,-2,5};
-    Polynomial pnA(data, 3);
+    int dataA[] = {3,-2,5};
+    Polynomial pnA(dataA, 3);
     cout << pnA << endl;
 
+    int dataB[] = {6,0,-1,3};
+    Polynomial pnB(dataB, 4);
+    cout << pnB << endl;
 
     cout << "Hello world!" << endl;
     return 0;

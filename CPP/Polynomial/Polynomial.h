@@ -15,7 +15,7 @@ private:
    int SIZE;
 
 public:
-    Polynomial(int*, int = 20);
+    Polynomial(int *, int = 20);
     Polynomial();
     void setSize(int);
     int getParam() const;

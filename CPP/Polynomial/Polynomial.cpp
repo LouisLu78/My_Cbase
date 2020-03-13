@@ -5,7 +5,7 @@ using namespace std;
 
 Polynomial::Polynomial( )
 {
-    setSize(SIZE);
+    setSize(20);
     for (int i = 0; i < SIZE; i++){
         param[i] = 0;
     }
@@ -13,7 +13,7 @@ Polynomial::Polynomial( )
 
 Polynomial::Polynomial(int *d, int length)
 {
-    for (int i = 0; i < length; i++){
+    for (int i = 0; i < SIZE; i++){
         param[i] = 0;
     }
 
@@ -124,20 +124,20 @@ ostream& operator<<(ostream& output, Polynomial& right)
         for (int i = right.SIZE - 1; i > 0; i--){
             if(right.param[i] != 0){
                 N = i;
-                output << right.param[i] << " x ^ " << i;
+                output << right.param[i] << "x^" << i << " ";
                 break;
             }
         }
         for (int i = N - 1; i > 0; i--){
             if (right.param[i] < 0){
-                output << right.param[i] << " x ^ " << i;
+                output << right.param[i] << "x^" << i << " ";
             }
             else if(right.param[i] < 0){
-                output << " + " << right.param[i] << " x ^ " << i;
+                output << " + " << right.param[i] << "x^" << i;
             }
         }
         if (right.param[0] != 0)
-        output << right.param[0] << endl;
+        output << " + " << right.param[0] << endl;
 
     }
 

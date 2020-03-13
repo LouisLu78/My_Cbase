@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1584105401 source:d:\my_cbase\cpp\polynomial\main.cpp
+1584107843 source:d:\my_cbase\cpp\polynomial\main.cpp
 	<iostream>
 	"Polynomial.h"
 
-1584105739 d:\my_cbase\cpp\polynomial\polynomial.h
+1584107292 d:\my_cbase\cpp\polynomial\polynomial.h
 	<iostream>
 
-1584105917 source:d:\my_cbase\cpp\polynomial\polynomial.cpp
+1584107534 source:d:\my_cbase\cpp\polynomial\polynomial.cpp
 	<iostream>
 	"Polynomial.h"
 
