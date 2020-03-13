@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Polynomial.cpp" />
 		<Unit filename="Polynomial.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

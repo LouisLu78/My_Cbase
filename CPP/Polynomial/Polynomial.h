@@ -2,7 +2,6 @@
 #define POLYNOMIAL_H_INCLUDED
 
 #include <iostream>
-#inlcude <vector>
 
 using namespace std;
 
@@ -12,20 +11,22 @@ friend istream& operator>>(istream& input, Polynomial& right);
 friend ostream& operator<<(ostream& output, Polynomial& right);
 
 private:
-    vector<int>param;
+   int param[];
+   int SIZE;
 
 public:
-    Polynomial(int);
-    ~Polynomial();
-    void setParam(int);
+    Polynomial(int*, int = 20);
+    Polynomial();
+    void setSize(int);
     int getParam() const;
-    const Polynomial &operator=(Polynomial &right);
-    Polynomial &operator+(Polynomial &right);
-    Polynomial &operator-(Polynomial &right);
-    Polynomial &operator*(Polynomial &right);
-    Polynomial &operator/(Polynomial &right);
+    const Polynomial &operator=(const Polynomial &right);
+    bool isZero();
+    Polynomial operator+(Polynomial &right);
+    Polynomial operator-(Polynomial &right);
+    Polynomial operator*(Polynomial &right);
     Polynomial &operator+=(Polynomial &right);
     Polynomial &operator-=(Polynomial &right);
+    Polynomial &operator*=(Polynomial &right);
 };
 
 
