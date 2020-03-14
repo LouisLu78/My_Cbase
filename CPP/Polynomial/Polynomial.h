@@ -27,6 +27,7 @@ public:
     Polynomial &operator+=(Polynomial &right);
     Polynomial &operator-=(Polynomial &right);
     Polynomial &operator*=(Polynomial &right);
+    void print() const;
 };
 
 

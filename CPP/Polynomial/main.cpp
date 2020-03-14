@@ -11,8 +11,10 @@ int main()
 
     int dataB[] = {6,0,-1,3};
     Polynomial pnB(dataB, 4);
+    pnB.print();
+
     cout << pnB << endl;
 
     cout << "Hello world!" << endl;
     return 0;
-}//to be finished later
+}

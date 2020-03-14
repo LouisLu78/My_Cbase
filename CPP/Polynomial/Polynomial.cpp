@@ -11,14 +11,15 @@ Polynomial::Polynomial( )
     }
 }
 
-Polynomial::Polynomial(int *d, int length)
+Polynomial::Polynomial(int *d, int len)
 {
+    setSize(20);
     for (int i = 0; i < SIZE; i++){
         param[i] = 0;
     }
 
-    for (int i = 0; i < length; i++){
-        param[i] = *(d + i);
+    for (int j = 0; j < len; j++){
+        param[j] = d[j];
     }
 }
 
@@ -104,6 +105,14 @@ Polynomial &Polynomial::operator-=(Polynomial &right)
     return *this;
 }
 
+void Polynomial::print() const
+{
+    for (int i = 0; i < SIZE; i++){
+        cout << param[i] << " ";
+    }
+    cout << endl;
+}
+
 istream& operator>>(istream& input, Polynomial& right)
 {
     int i, count = 0;
@@ -124,7 +133,7 @@ ostream& operator<<(ostream& output, Polynomial& right)
         for (int i = right.SIZE - 1; i > 0; i--){
             if(right.param[i] != 0){
                 N = i;
-                output << right.param[i] << "x^" << i << " ";
+                output << right.param[N] << "x^" << N << " ";
                 break;
             }
         }
@@ -132,7 +141,7 @@ ostream& operator<<(ostream& output, Polynomial& right)
             if (right.param[i] < 0){
                 output << right.param[i] << "x^" << i << " ";
             }
-            else if(right.param[i] < 0){
+            else if(right.param[i] > 0){
                 output << " + " << right.param[i] << "x^" << i;
             }
         }
