@@ -8,11 +8,11 @@ using namespace std;
 
 class Polynomial
 {
-friend istream& operator>>(istream& input, Polynomial& right);
-friend ostream& operator<<(ostream& output, Polynomial& right);
+    friend istream& operator>>(istream& input, Polynomial& right);
+    friend ostream& operator<<(ostream& output, Polynomial& right);
 
 private:
-   vector<int> ivec;
+    vector<int> ivec;
 
 public:
 
