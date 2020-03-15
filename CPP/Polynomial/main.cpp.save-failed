@@ -12,8 +12,8 @@ int main()
     int dataB[] = {6,0,-1,3};
     Polynomial pnB(dataB, 4);
     pnB.print();
-    cout << pnB << endl;
 
+    cout << pnB << endl;
     Polynomial pnC;
     cout << pnC << endl;
     pnC.print();
@@ -36,16 +36,11 @@ int main()
 
     int dataC[] = {1,1};
     Polynomial pnG(dataC, 2);
+    pnG.print();
     cout << pnG << endl;
-
-    Polynomial pnH = pnG ^ 5;
-    cout << pnH << endl;
 
     pnG *= pnA;
     cout << pnG << endl;
-
-    Polynomial pnI(5,9,-6,0,1,-2);
-    cout << pnI << endl;
 
     cout << "I solved this question! Perfect!!" << endl;
     return 0;

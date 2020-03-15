@@ -18,6 +18,7 @@ public:
 
     Polynomial();
     Polynomial(int *, int = 20);
+    Polynomial(int, ...);
     ~Polynomial();
     void setSize(int);
     vector<int> &getIvec();
@@ -30,6 +31,8 @@ public:
     Polynomial &operator+=(Polynomial &right);
     Polynomial &operator-=(Polynomial &right);
     Polynomial &operator*=(Polynomial &right);
+
+    Polynomial operator^(int );
     void print() const;
 };
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cstdarg>
 #include "Polynomial.h"
 
 using namespace std;
@@ -13,6 +14,16 @@ Polynomial::Polynomial(int *d, int len)
 {
 
     ivec.assign(d, d + len);
+}
+
+Polynomial::Polynomial(int count, ...)
+{
+    va_list argPtr;
+    va_start (argPtr, count);
+    for (int i = 0; i < count; i++){
+        ivec.push_back(va_arg(argPtr, int));
+    }
+    va_end(argPtr);
 }
 
 Polynomial::~Polynomial()
@@ -50,7 +61,6 @@ bool Polynomial::isZero()
 
 Polynomial Polynomial::operator+(Polynomial &right)
 {
-    Polynomial temp;
     if (ivec.size() > right.ivec.size()){
         for (int i = right.ivec.size(); i < ivec.size(); i++){
             right.ivec.push_back(0);
@@ -61,9 +71,10 @@ Polynomial Polynomial::operator+(Polynomial &right)
             ivec.push_back(0);
         }
     }
-
+    Polynomial temp;
+    temp.ivec.clear();
     for (size_t i = 0; i < ivec.size(); i++){
-        temp.ivec[i] = ivec[i] + right.ivec[i];
+        temp.ivec.push_back(ivec[i] + right.ivec[i]);
     }
 
     return temp;
@@ -71,7 +82,6 @@ Polynomial Polynomial::operator+(Polynomial &right)
 
 Polynomial Polynomial::operator-(Polynomial &right)
 {
-    Polynomial temp;
     if (ivec.size() > right.ivec.size()){
         for (int i = right.ivec.size(); i < ivec.size(); i++){
             right.ivec.push_back(0);
@@ -83,8 +93,10 @@ Polynomial Polynomial::operator-(Polynomial &right)
         }
     }
 
+    Polynomial temp;
+    temp.ivec.clear();
     for (size_t i = 0; i < ivec.size(); i++){
-        temp.ivec[i] = ivec[i] - right.ivec[i];
+        temp.ivec.push_back(ivec[i] - right.ivec[i]);
     }
 
     return temp;
@@ -115,6 +127,28 @@ Polynomial &Polynomial::operator-=(Polynomial &right)
     return *this;
 }
 
+Polynomial &Polynomial::operator*=(Polynomial &right)
+{
+    *this = (*this) * right;
+    return *this;
+}
+Polynomial Polynomial::operator^(int N)
+{
+    Polynomial temp;
+    temp = *this;
+    if (N == 1){
+        ;
+    }
+    else{
+        for (int i = 1; i < N; i++){
+            temp = temp * (*this);
+        }
+
+    }
+    return temp;
+}
+
+
 void Polynomial::print() const
 {
     for (int i = 0; i < ivec.size(); i++){
@@ -135,16 +169,16 @@ istream& operator>>(istream& input, Polynomial& right)
 
 ostream& operator<<(ostream& output, Polynomial& right)
 {
-    int N;
+    int N = 1;
     if(right.isZero()){
         output << "0";
     }
     else{
-        for (int i = right.ivec.size() - 1; i > 0; i--){
+        for (int i = right.ivec.size() - 1; i > 1; i--){
             if(right.ivec[i] != 0 && i > 1){
                 N = i;
                 (right.ivec[N] == 1) ? (output << "") : (output << right.ivec[N]);
-                output << "x^" << N << " ";
+                output << "x^" << N;
                 break;
             }
         }
@@ -162,7 +196,7 @@ ostream& operator<<(ostream& output, Polynomial& right)
         }
 
         if (right.ivec[1] > 0){
-            output << " + ";
+            (N >= 2) ? (output << " + ") : (output << "");
             (right.ivec[1] == 1) ? (output << "") : (output << right.ivec[1]);
             output << "x";
         }
