@@ -1,53 +1,47 @@
 #include <iostream>
+#include <cmath>
 #include "Polynomial.h"
 
 using namespace std;
 
 Polynomial::Polynomial( )
 {
-    setSize(20);
-    for (int i = 0; i < SIZE; i++){
-        param[i] = 0;
-    }
+    ivec.assign(20, 0);
 }
 
 Polynomial::Polynomial(int *d, int len)
 {
-    setSize(20);
-    for (int i = 0; i < SIZE; i++){
-        param[i] = 0;
-    }
 
-    for (int j = 0; j < len; j++){
-        param[j] = d[j];
-    }
+    ivec.assign(d, d + len);
 }
 
+Polynomial::~Polynomial()
+{
+    ivec.clear();
+}
  const Polynomial &Polynomial::operator=(const Polynomial &right)
 {
     if (this != &right){
 
-        for (int i = 0; i < SIZE; i++){
-            param[i] = right.param[i];
-        }
+        ivec.assign(right.ivec.begin(), right.ivec.end());
     }
     return *this;
 }
 
 void Polynomial::setSize(int length)
 {
-    SIZE = length;
+    ivec.assign(length, 0);
 }
 
-int Polynomial::getParam() const
+vector<int> &Polynomial::getIvec()
 {
-    return param[SIZE];
+    return ivec;
 }
 
 bool Polynomial::isZero()
 {
-    for (int i = 0; i < SIZE; i++){
-        if (param[i] != 0){
+    for (size_t i = 0; i < ivec.size(); i++){
+        if (ivec[i] != 0){
             return false;
         }
     }
@@ -57,8 +51,19 @@ bool Polynomial::isZero()
 Polynomial Polynomial::operator+(Polynomial &right)
 {
     Polynomial temp;
-    for (int i = 0; i < SIZE; i++){
-        temp.param[i] = param[i] + right.param[i];
+    if (ivec.size() > right.ivec.size()){
+        for (int i = right.ivec.size(); i < ivec.size(); i++){
+            right.ivec.push_back(0);
+        }
+    }
+    else{
+        for(int i = ivec.size(); i < right.ivec.size(); i++){
+            ivec.push_back(0);
+        }
+    }
+
+    for (size_t i = 0; i < ivec.size(); i++){
+        temp.ivec[i] = ivec[i] + right.ivec[i];
     }
 
     return temp;
@@ -67,9 +72,19 @@ Polynomial Polynomial::operator+(Polynomial &right)
 Polynomial Polynomial::operator-(Polynomial &right)
 {
     Polynomial temp;
+    if (ivec.size() > right.ivec.size()){
+        for (int i = right.ivec.size(); i < ivec.size(); i++){
+            right.ivec.push_back(0);
+        }
+    }
+    else{
+        for(int i = ivec.size(); i < right.ivec.size(); i++){
+            ivec.push_back(0);
+        }
+    }
 
-    for (int i = 0; i < SIZE; i++){
-        temp.param[i] = param[i] - right.param[i];
+    for (size_t i = 0; i < ivec.size(); i++){
+        temp.ivec[i] = ivec[i] - right.ivec[i];
     }
 
     return temp;
@@ -78,10 +93,11 @@ Polynomial Polynomial::operator-(Polynomial &right)
 Polynomial Polynomial::operator*(Polynomial &right)
 {
     Polynomial temp;
-    temp.setSize(40);
-    for (int i = 0; i < 20; i++){
-        for (int j = 0; j < 20; j++)
-        temp.param[i+j] += param[i] * right.param[j];
+    int s = ivec.size() + right.ivec.size();
+    temp.ivec.assign(s, 0);
+    for (size_t i = 0; i < ivec.size(); i++){
+        for (size_t j = 0; j < right.ivec.size(); j++)
+        temp.ivec[i+j] += ivec[i] * right.ivec[j];
     }
 
     return temp;
@@ -89,36 +105,30 @@ Polynomial Polynomial::operator*(Polynomial &right)
 
 Polynomial &Polynomial::operator+=(Polynomial &right)
 {
-    for (int i = 0; i < SIZE; i++){
-        param[i] += right.param[i];
-    }
-
+    *this = *this + right;
     return *this;
 }
 
 Polynomial &Polynomial::operator-=(Polynomial &right)
 {
-    for (int i = 0; i < SIZE; i++){
-        param[i] -= right.param[i];
-    }
-
+    *this = *this - right;
     return *this;
 }
 
 void Polynomial::print() const
 {
-    for (int i = 0; i < SIZE; i++){
-        cout << param[i] << " ";
+    for (int i = 0; i < ivec.size(); i++){
+        cout << ivec[i] << " ";
     }
     cout << endl;
 }
 
 istream& operator>>(istream& input, Polynomial& right)
 {
-    int i, count = 0;
+    int i;
+    right.ivec.clear();
     while(input >> i){
-        right.param[count] = i;
-        count++;
+        right.ivec.push_back(i);
     }
     return input;
 }
@@ -130,24 +140,44 @@ ostream& operator<<(ostream& output, Polynomial& right)
         output << "0";
     }
     else{
-        for (int i = right.SIZE - 1; i > 0; i--){
-            if(right.param[i] != 0){
+        for (int i = right.ivec.size() - 1; i > 0; i--){
+            if(right.ivec[i] != 0 && i > 1){
                 N = i;
-                output << right.param[N] << "x^" << N << " ";
+                (right.ivec[N] == 1) ? (output << "") : (output << right.ivec[N]);
+                output << "x^" << N << " ";
                 break;
             }
         }
-        for (int i = N - 1; i > 0; i--){
-            if (right.param[i] < 0){
-                output << right.param[i] << "x^" << i << " ";
+        for (int i = N - 1; i > 1; i--){
+            if (right.ivec[i] < 0){
+                output << " - ";
+                (right.ivec[i] == -1) ? (output << "") : (output << abs(right.ivec[i]));
+                output << "x^" << i;
             }
-            else if(right.param[i] > 0){
-                output << " + " << right.param[i] << "x^" << i;
+            else if(right.ivec[i] > 0){
+                output << " + ";
+                (right.ivec[i] == 1) ? (output << "") : (output << right.ivec[i]);
+                output << "x^" << i;
             }
         }
-        if (right.param[0] != 0)
-        output << " + " << right.param[0] << endl;
 
+        if (right.ivec[1] > 0){
+            output << " + ";
+            (right.ivec[1] == 1) ? (output << "") : (output << right.ivec[1]);
+            output << "x";
+        }
+        else if((right.ivec[1] < 0)){
+            output << " - ";
+            (right.ivec[1] == -1) ? (output << "") : (output << abs(right.ivec[1]));
+            output << "x";
+        }
+
+        if (right.ivec[0] > 0){
+            output << " + " << right.ivec[0] << endl;
+        }
+        else if((right.ivec[0] < 0)){
+            output << " - " << abs(right.ivec[0]) << endl;
+        }
     }
 
     return output;

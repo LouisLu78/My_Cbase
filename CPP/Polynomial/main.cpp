@@ -14,7 +14,26 @@ int main()
     pnB.print();
 
     cout << pnB << endl;
+    Polynomial pnC;
+    cout << pnC << endl;
+    pnC.print();
 
-    cout << "Hello world!" << endl;
+    pnC = pnA + pnB;
+    cout << pnC << endl;
+    pnC.print();
+
+    Polynomial pnD = pnA - pnB;
+    cout << pnD << endl;
+
+    Polynomial pnE = pnA * pnB;
+    cout << pnE << endl;
+
+    Polynomial pnF = pnE;
+    cout << pnF << endl;
+
+    pnF += pnA;
+    cout << pnF << endl;
+
+    cout << "I solved this question! Perfect!!" << endl;
     return 0;
 }
