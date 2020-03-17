@@ -38,7 +38,7 @@ int main()
     Polynomial pnG(dataC, 2);
     cout << pnG << endl;
 
-    Polynomial pnH = pnG ^ 5;
+    Polynomial pnH = pnG ^ 3;
     cout << pnH << endl;
 
     pnG *= pnA;

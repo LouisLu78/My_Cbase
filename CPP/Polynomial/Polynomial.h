@@ -17,7 +17,7 @@ private:
 public:
 
     Polynomial();
-    Polynomial(int *, int = 20);
+    Polynomial(int *, int);
     Polynomial(int, ...);
     ~Polynomial();
     void setSize(int);
