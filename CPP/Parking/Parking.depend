@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1584502847 source:d:\my_cbase\cpp\parking\main.cpp
+	<iostream>
+	<string>
+	"Parking.h"
+
+1584502976 d:\my_cbase\cpp\parking\parking.h
+	<iostream>
+	<string>
+
+1584503137 source:d:\my_cbase\cpp\parking\parking.cpp
+	<iostream>
+	<string>
+	<cmath>
+	"Parking.h"
+

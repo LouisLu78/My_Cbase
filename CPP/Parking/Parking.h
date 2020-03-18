@@ -10,11 +10,10 @@ class Parking
 {
 private:
     string carNumber;
-    int parkingTime;
-    double charge;
+    double parkingTime;
 
 public:
-    Parking(string &, int, double = 0.0);
+    Parking(const string &, double);
     double calculateCharges();
     void print();
 };
