@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1584717617 source:d:\my_cbase\cpp\eratosthenes\main.cpp
+1584780994 source:d:\my_cbase\cpp\eratosthenes\main.cpp
 	<iostream>
-	<vector>
 	"Eratosthenes.h"
 
 1584716624 d:\my_cbase\cpp\eratosthenes\eratosthenes.h
 	<iostream>
 	<vector>
 
-1584717726 source:d:\my_cbase\cpp\eratosthenes\eratosthenes.cpp
+1584780974 source:d:\my_cbase\cpp\eratosthenes\eratosthenes.cpp
 	<iostream>
 	<vector>
 	"Eratosthenes.h"

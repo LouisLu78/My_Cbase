@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1584794867 source:d:\my_cbase\cpp\craps\craps.cpp
+	<iomanip>
+	<cstdlib>
+	"Craps.h"
+
+1584795284 d:\my_cbase\cpp\craps\craps.h
+	<iostream>
+
+1584795853 source:d:\my_cbase\cpp\craps\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"Craps.h"
+

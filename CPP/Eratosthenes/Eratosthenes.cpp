@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "Eratosthenes.h"
 
@@ -32,6 +33,7 @@ Eratosthenes::Eratosthenes(int num)
 {
     N = num;
     ivec.assign(N, 1);
+    sieve();
 }
 
 void Eratosthenes::sieve()
@@ -53,17 +55,19 @@ void Eratosthenes::sieve()
 
 void Eratosthenes::printArray()
 {
-    int t = 0;
+    int count = 0;
     for (size_t i = 2; i < N; i++)
     {
         if (ivec[i])
         {
-            cout << i << " ";
-            t++;
-        }
-        if(t % 10 == 0)
-        {
-            cout << endl;
+            count++;
+            cout << left << setw(7) << i << " ";
+
+            if(count % 10 == 0)
+            {
+                cout << endl;
+            }
         }
     }
+    cout << endl;
 }
