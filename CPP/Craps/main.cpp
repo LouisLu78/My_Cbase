@@ -11,19 +11,22 @@ int main()
 
     int counter = 0;
     Craps Donald;
-    while(!Donald.isZero()){
+    while(!Donald.isZero())
+    {
         Donald.gamble();
 
         cout << "Your bank of balance is updated. You have " << Donald.getBalance()
-        << "USD now." << endl;
+             << "USD now." << endl;
         counter++;
-        if (counter == 100){
+        if (counter == 100)
+        {
             cout << "You have played too much and you need to take a rest now." << endl;
             break;
         }
     }
-    if(Donald.isZero()){
-        cout << "You have bankrupted and you have to quit the gamble.\
+    if(Donald.isZero())
+    {
+        cout << "You have been bankrupted and you have to quit the gamble.\
             \nWe wish you to have a better luck next time!" << endl;
     }
 

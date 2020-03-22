@@ -18,7 +18,7 @@ private:
 public:
     Card(int =13 , int = 4);
 
-    string toString(string&, string&);
+    static string toString(string&, string&);
 
 };
 

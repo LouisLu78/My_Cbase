@@ -15,7 +15,7 @@ private:
     bool isWin();
 
 public:
-    Craps(int = 1000, int = 100);
+    Craps(int = 1000, int = 150);
 
     void gamble();
     int getBalance() const;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1583935304 source:d:\my_cbase\cpp\q18_10\playcard\main.cpp
+1583935905 source:d:\my_cbase\cpp\q18_10\playcard\main.cpp
 	<iostream>
 	<string>
 	<ctime>
@@ -7,7 +7,7 @@
 	"Card.h"
 	"DeckOfCards.h"
 
-1583934763 d:\my_cbase\cpp\q18_10\playcard\card.h
+1584864293 d:\my_cbase\cpp\q18_10\playcard\card.h
 	<iostream>
 	<string>
 
@@ -22,7 +22,7 @@
 	<vector>
 	"Card.h"
 
-1583935484 source:d:\my_cbase\cpp\q18_10\playcard\deckofcards.cpp
+1584863622 source:d:\my_cbase\cpp\q18_10\playcard\deckofcards.cpp
 	<iostream>
 	<string>
 	<vector>

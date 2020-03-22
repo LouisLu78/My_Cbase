@@ -9,12 +9,10 @@ using namespace std;
 
 DeckOfCards::DeckOfCards()
 {
-    Card temp;
+
     for (int i = 0; i < 13; i++){
         for (int j = 0; j < 4; j++){
-            string sf = temp.sface[i];
-            string ss = temp.ssuit[j];
-            deck.push_back(temp.toString(sf, ss));
+            deck.push_back(Card::toString(Card::sface[i], Card::ssuit[j]));
         }
     }
 
