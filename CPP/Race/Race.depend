@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1584973459 source:d:\my_cbase\cpp\race\main.cpp
+1584974548 source:d:\my_cbase\cpp\race\main.cpp
 	<iostream>
 	<cstdlib>
+	<vector>
 	<ctime>
 	"Hare.h"
 	"Tortoise.h"
@@ -12,12 +13,12 @@
 1584972428 d:\my_cbase\cpp\race\tortoise.h
 	<iostream>
 
-1584973524 source:d:\my_cbase\cpp\race\tortoise.cpp
+1585030580 source:d:\my_cbase\cpp\race\tortoise.cpp
 	<iostream>
 	<cstdlib>
 	"Tortoise.h"
 
-1584973487 source:d:\my_cbase\cpp\race\hare.cpp
+1585030646 source:d:\my_cbase\cpp\race\hare.cpp
 	<iostream>
 	<cstdlib>
 	"Hare.h"

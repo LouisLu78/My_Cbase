@@ -27,6 +27,9 @@ void Hare::bigLeap()
 void Hare::severeSlip()
 {
     pos -= 12;
+    if(pos < 1){
+        pos = 1;
+    }
 }
 
 void Hare::smallJump()
@@ -37,6 +40,9 @@ void Hare::smallJump()
 void Hare::slightSlip()
 {
     pos -= 2;
+    if(pos < 1){
+        pos = 1;
+    }
 }
 
 void Hare::race()

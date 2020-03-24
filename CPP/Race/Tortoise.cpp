@@ -4,8 +4,6 @@
 
 using namespace std;
 
-
-
 Tortoise::Tortoise(int site)
 {
     pos = (site < 1) ? 1 : site;
@@ -19,6 +17,9 @@ void Tortoise::fastCrawl()
 void Tortoise::slip()
 {
     pos -= 6;
+    if(pos < 1){
+        pos = 1;
+    }
 }
 
 void Tortoise::slowCrawl()
