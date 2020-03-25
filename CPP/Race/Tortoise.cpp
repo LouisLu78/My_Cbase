@@ -17,9 +17,8 @@ void Tortoise::fastCrawl()
 void Tortoise::slip()
 {
     pos -= 6;
-    if(pos < 1){
-        pos = 1;
-    }
+
+    pos = pos < 1 ? 1 : pos;
 }
 
 void Tortoise::slowCrawl()

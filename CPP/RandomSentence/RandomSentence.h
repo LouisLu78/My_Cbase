@@ -5,6 +5,8 @@
 
 using namespace std;
 
+int getNumber();
+
 class RandomSentence
 {
 private:
@@ -12,12 +14,14 @@ private:
     static string noun[];
     static string verb[];
     static string preposition[];
-    static string article[];
-    static string noun[];
+
+    string sentence;
 
 public:
     RandomSentence();
-    string connection(int = 6, ...);
+    string capitalize(string &);
+    void connection();
+    void print() const;
 };
 
 #endif // RANDOMSENTENCE_H_INCLUDED
