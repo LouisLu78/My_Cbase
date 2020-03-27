@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1585144774 source:d:\my_cbase\cpp\randomsentence\main.cpp
+1585147671 source:d:\my_cbase\cpp\randomsentence\main.cpp
 	<iostream>
 	<string>
 	<cstdlib>
 	<ctime>
 	"RandomSentence.h"
 
-1585147636 d:\my_cbase\cpp\randomsentence\randomsentence.h
+1585184371 d:\my_cbase\cpp\randomsentence\randomsentence.h
 	<iostream>
 	<string>
 

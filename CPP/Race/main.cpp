@@ -7,6 +7,18 @@
 
 using namespace std;
 
+void delay(double second)
+{
+    clock_t start;
+    start = clock();
+
+    while ((clock() - start) < second * CLOCKS_PER_SEC)
+    {
+       continue;
+    };
+}
+
+
 int main()
 {
     const int LEN = 70;
@@ -35,6 +47,9 @@ int main()
             cout << ivec[i];
         }
         cout << endl;
+
+        delay(0.2);
+
         ivec.assign(LEN, " ");
         racingTime++;
     }

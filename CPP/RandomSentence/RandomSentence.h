@@ -19,7 +19,7 @@ private:
 
 public:
     RandomSentence();
-    string capitalize(string &);
+    string capitalize(string );
     void connection();
     void print() const;
 };

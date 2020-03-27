@@ -1,0 +1,1 @@
+This is Question23.14 in book "C How To Program Sixth Edition" by P. Deitel & H. Deitel. I rewrite it into a class instead of function.

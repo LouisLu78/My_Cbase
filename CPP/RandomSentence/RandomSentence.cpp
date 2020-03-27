@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include <cctype>
+
 #include "RandomSentence.h"
 
 using namespace std;
@@ -21,12 +21,10 @@ RandomSentence::RandomSentence()
     sentence = "";
 }
 
-string RandomSentence::capitalize(string &word)
+string RandomSentence::capitalize(string word)
 {
-    string t;
-    char s = toupper(word[0]);
-
-    return t + s + word.substr(1);
+    word[0] += ('A' - 'a');
+    return word;
 }
 
 void RandomSentence::connection()
@@ -35,6 +33,7 @@ void RandomSentence::connection()
     int M, N = getNumber();
     t = capitalize(article[getNumber()]) + " " + noun[N] + " "\
         + verb[getNumber()] + " " + preposition[getNumber()] + " ";
+
     while (N == (M = getNumber())){
         continue;
     }
