@@ -46,21 +46,27 @@ void Hare::slightSlip()
 void Hare::race()
 {
     int n = getNumber();
-    if (n == 1 || n == 2){
-        sleep();
-    }
-    else if (n == 3 || n == 4){
-        bigLeap();
-    }
-    else if (n == 5){
-        severeSlip();
-    }
-    else if (n > 5 && n <=8){
-        smallJump();
-    }
-    else{
-        slightSlip();
-    }
+    switch(n){
+        case 1: case 2:
+            sleep();
+            break;
+
+        case 3: case 4:
+            bigLeap();
+            break;
+
+        case 5:
+            severeSlip();
+            break;
+
+        case 6: case 7: case 8:
+            smallJump();
+            break;
+
+        default:
+            slightSlip();
+            break;
+            }
 }
 
 int Hare::getPosition()

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1585049773 source:d:\my_cbase\cpp\race\main.cpp
+1585320180 source:d:\my_cbase\cpp\race\main.cpp
 	<iostream>
 	<cstdlib>
 	<vector>
@@ -18,7 +18,7 @@
 	<cstdlib>
 	"Tortoise.h"
 
-1585120600 source:d:\my_cbase\cpp\race\hare.cpp
+1585321445 source:d:\my_cbase\cpp\race\hare.cpp
 	<iostream>
 	<cstdlib>
 	"Hare.h"
