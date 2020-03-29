@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -71,6 +72,24 @@ int main()
         waitTime.push_back(T - N);
 
     }
+
+    cout << "arrival time:" << endl;
+    cout << setw(15) << "time:" << setw(15) << "customer No."<< endl;
+    for (size_t j = 0; j < workTime; j++){
+        if (arrival[j] != 0){
+            cout << setw(15) << j << setw(15) << arrival[j] << endl;
+        }
+    }
+    cout << endl;
+
+    cout << "leaving time:" << endl;
+    cout << setw(15) << "time:" << setw(15) << "customer No."<< endl;
+    for (size_t j = 0; j < workTime; j++){
+        if (leave[j] != 0){
+            cout << setw(15) << j << setw(15) << leave[j] << endl;
+        }
+    }
+    cout << endl;
 
     int maxTime = maxdata(waitTime);
     cout << "The customer who awaited most waited for " << maxTime << " minutes." << endl;
