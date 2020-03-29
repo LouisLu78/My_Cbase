@@ -9,11 +9,13 @@ int main()
 {
     ifstream inputl;
     vector<string>lvec;
-    string s;
+    string s, temp;
 
     inputl.open("test.txt");
+
     while(getline(inputl, s)){
         lvec.push_back(s);
+        temp += s;
     }
     inputl.close();
 
@@ -21,5 +23,6 @@ int main()
         cout << lvec[i] << endl;
     }
 
+    cout << temp << endl;
     return 0;
 }

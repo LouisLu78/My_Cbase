@@ -1,6 +1,13 @@
+#ifdef __cplusplus
+extern "C"
+#endif // __cplusplus
+
 #include <iostream>
+#include <stdio.h>
+#include <iomanip>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 typedef vector<string> SVEC;
@@ -49,14 +56,27 @@ int main()
     SVEC result;
     phoneWords(n, result);
 
+    ofstream outfile;
+    outfile.open("word.txt");
+
+    FILE *fPtr;
+    fPtr = fopen("wordc.txt", "w");
+
     for (size_t i = 0; i < result.size(); i++)
     {
-        cout << result[i] << " ";
-        if (i % 25 == 24)
+        cout << left << setw(12) << result[i] << " ";
+        outfile << left << setw(15) << result[i] << " ";
+        fprintf(fPtr, "%15s ", result[i].c_str());
+
+        if (i % 10 == 9)
         {
             cout << endl;
+            outfile << endl;
+            fprintf(fPtr,"\n");
         }
     }
+    outfile.close();
+    fclose(fPtr);
     cout << "\n\nThe dictionary totally contains " << result.size() << " words." << endl << endl;
 
     return 0;

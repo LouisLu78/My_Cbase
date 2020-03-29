@@ -23,7 +23,7 @@ int main()
 	}
 	else{
 		for (int i = 0; i < RECORDS; i++){
-			fprintf(fPtr,"%d %s %d %lf\n",Hardwares.accoutNum, Hardwares.toolName, Hardwares.amount, Hardwares.cost);
+			fprintf(fPtr,"%5d %21s %5d %10.2f\n",Hardwares.accoutNum, Hardwares.toolName, Hardwares.amount, Hardwares.cost);
 		}
 		fclose(fPtr);
 	}
@@ -45,7 +45,7 @@ int main()
  {
      rewind(ptr);
      printf("Please enter the information of tools:");
-     fscanf(stdin,"%d %s %d %lf", pointer->accoutNum, pointer->toolName, pointer->amount, pointer->cost);
+     fscanf(stdin,"%d%s%d%lf", &pointer->accoutNum, pointer->toolName, &pointer->amount, &pointer->cost);
      fseek(ptr, number * sizeof(struct Record), SEEK_SET);
      fwrite(pointer, sizeof(struct Record), 1, ptr);
  }
