@@ -38,6 +38,8 @@ int main()
     }
     fclose(fPtr);
 
+    rp = NULL;
+
 	return 0;
  }
 
