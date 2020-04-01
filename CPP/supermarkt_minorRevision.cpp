@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <vector>
 #include <algorithm>
-#include <cstdlib>
-#include <ctime>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std; //This is question 12.15 in book "C How To Program Sixth Edition" by P. Deitel & H. Deitel.
 
@@ -12,10 +12,12 @@ int duration(void)
     return 1 + rand() % 4;
 }
 
-void printArray(vector<int>& ivec)
+void printArray(const vector<int>& ivec)
 {
-    for (size_t i = 0; i < ivec.size(); i++){
-        if (ivec[i]){
+    for (size_t i = 0; i < ivec.size(); i++)
+    {
+        if (ivec[i])
+        {
             cout << setw(15) << i << setw(15) << ivec[i] << endl;
         }
     }
@@ -34,7 +36,8 @@ int main()
     T = t;
     vector<int> arrival(workTime);
 
-    while (t < workTime){
+    while (t < workTime)
+    {
         arrival[t] = i;
         t += duration();
         i++;
@@ -45,11 +48,14 @@ int main()
 
     vector<int>waitTime, waitPeople;
 
-    while (T < workTime){
+    while (T < workTime)
+    {
 
         leave[T] = i;
-        for (size_t j = 0; j <= T; j++){
-            if (arrival[T - j] > 0){
+        for (size_t j = 0; j <= T; j++)
+        {
+            if (arrival[T - j] > 0)
+            {
                 k = arrival[T - j];
                 break;
             }
@@ -60,8 +66,10 @@ int main()
         T += duration();
         i++;
 
-        for (size_t j = 0; j < arrival.size(); j++){
-            if (arrival[j] == i){
+        for (size_t j = 0; j < arrival.size(); j++)
+        {
+            if (arrival[j] == i)
+            {
                 N = j;
                 break;
             }
