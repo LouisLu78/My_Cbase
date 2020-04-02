@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void gcd(int, int);
+int gcd(int, int);
 
 class Fraction
 {
@@ -16,7 +16,7 @@ private:
 public:
     Fraction(int = 1, int = 2);
     Fraction(const Fraction&);
-    Fraction &operator=(const Fraction&);
+    const Fraction &operator=(const Fraction&);
 
     const Fraction operator+(const Fraction&);
     const Fraction operator-(const Fraction&);
@@ -24,13 +24,13 @@ public:
     const Fraction operator/(const Fraction&);
 
     bool operator>(const Fraction& ) const;
-    bool operator>=(const Fraction& ) const;
     bool operator==(const Fraction& ) const;
+    bool operator>=(const Fraction& ) const;
     bool operator!=(const Fraction& ) const;
     bool operator<(const Fraction& ) const;
     bool operator<=(const Fraction& ) const;
 };
-ostream& operator<<(ostream&, Fraction&);
+
 
 #endif // FRACTION_H_INCLUDED
-//I will rewrite this class laster.
+//I will rewrite this useful class laster.
