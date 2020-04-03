@@ -30,6 +30,48 @@ ostream& operator<<(ostream& output, Fraction& rhs)
 	return output;
 }
 
+const Fraction operator+(const Fraction&lhs, const Fraction&rhs)
+{
+    if (lhs.denominator == rhs.denominator) {
+			return Fraction(lhs.numerator + rhs.numerator, lhs.denominator);
+		}
+		else {
+			int new_de = lhs.denominator * rhs.denominator;
+			int new_nu = lhs.numerator * rhs.denominator + rhs.numerator * lhs.denominator;
+
+			return Fraction(new_nu, new_de);
+		}
+}
+
+const Fraction operator-(const Fraction&lhs, const Fraction&rhs)
+{
+    if (lhs.denominator == rhs.denominator) {
+			return Fraction(lhs.numerator - rhs.numerator, lhs.denominator);
+		}
+		else {
+			int new_de = lhs.denominator * rhs.denominator;
+			int new_nu = lhs.numerator * rhs.denominator - rhs.numerator * lhs.denominator;
+
+			return Fraction(new_nu, new_de);
+		}
+}
+
+const Fraction operator*(const Fraction&lhs, const Fraction&rhs)
+{
+    int new_de = lhs.denominator * rhs.denominator;
+    int new_nu = lhs.numerator * rhs.numerator;
+
+    return Fraction(new_nu, new_de);
+}
+
+const Fraction operator/(const Fraction&lhs, const Fraction&rhs)
+{
+    int new_de = lhs.denominator * rhs.numerator;
+    int new_nu = lhs.numerator * rhs.denominator;
+
+    return Fraction(new_nu, new_de);
+}
+
 Fraction::Fraction(int nu, int de)
 {
     if (de == 0) {
@@ -59,46 +101,32 @@ const Fraction &Fraction::operator=(const Fraction&rhs)
     return *this;
 }
 
-const Fraction Fraction::operator+(const Fraction&rhs)
+Fraction &Fraction::operator+=(const Fraction&rhs)
 {
-    if (denominator == rhs.denominator) {
-			return Fraction(numerator + rhs.numerator, denominator);
-		}
-		else {
-			int new_de = denominator * rhs.denominator;
-			int new_nu = numerator * rhs.denominator + rhs.numerator * denominator;
+    *this = *this + rhs;
 
-			return Fraction(new_nu, new_de);
-		}
+    return *this;
 }
 
-const Fraction Fraction::operator-(const Fraction&rhs)
+Fraction &Fraction::operator-=(const Fraction&rhs)
 {
-    if (denominator == rhs.denominator) {
-			return Fraction(numerator - rhs.numerator, denominator);
-		}
-		else {
-			int new_de = denominator * rhs.denominator;
-			int new_nu = numerator * rhs.denominator - rhs.numerator * denominator;
+    *this = *this - rhs;
 
-			return Fraction(new_nu, new_de);
-		}
+    return *this;
 }
 
-const Fraction Fraction::operator*(const Fraction&rhs)
+Fraction &Fraction::operator*=(const Fraction&rhs)
 {
-    int new_de = denominator * rhs.denominator;
-    int new_nu = numerator * rhs.numerator;
+    *this = *this * rhs;
 
-    return Fraction(new_nu, new_de);
+    return *this;
 }
 
-const Fraction Fraction::operator/(const Fraction&rhs)
+Fraction &Fraction::operator/=(const Fraction&rhs)
 {
-    int new_de = denominator * rhs.numerator;
-    int new_nu = numerator * rhs.denominator;
+    *this = *this / rhs;
 
-    return Fraction(new_nu, new_de);
+    return *this;
 }
 
 bool Fraction::operator>(const Fraction&rhs ) const
