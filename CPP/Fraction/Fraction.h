@@ -16,12 +16,13 @@ struct Fraction
 
 private:
     int numerator;
-	int denominator;
+    int denominator;
 
 public:
     Fraction(int = 1, int = 1);
     Fraction(const Fraction&);
     const Fraction &operator=(const Fraction&);
+    ~Fraction();
 
     Fraction &operator+=(const Fraction&);
     Fraction &operator-=(const Fraction&);

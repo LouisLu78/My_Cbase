@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1585896513 source:d:\my_cbase\cpp\fraction\main.cpp
+1585900608 source:d:\my_cbase\cpp\fraction\main.cpp
 	<iostream>
 	<iomanip>
 	"Fraction.h"
 
-1585900410 d:\my_cbase\cpp\fraction\fraction.h
+1586007316 d:\my_cbase\cpp\fraction\fraction.h
 	<iostream>
 
 1585896998 source:d:\my_cbase\cpp\fraction\fraction.cpp
