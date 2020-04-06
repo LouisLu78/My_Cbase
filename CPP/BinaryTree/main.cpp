@@ -22,6 +22,8 @@ int main()
     }
 
     btA.preOrder();
+    btA.postOrder();
+    btA.inOrder();
 
     return 0;
-}
+}//I have solved this question.

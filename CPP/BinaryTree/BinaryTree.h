@@ -25,7 +25,8 @@ protected:
     void post_Order(TreeNode*);
 
 public:
-    BinaryTree(TreeNode* = nullptr);
+    BinaryTree(TreeNode* = NULL);
+    virtual ~BinaryTree();
     TreeNode* getNode();
     void insertNode(int );
     void inOrder();

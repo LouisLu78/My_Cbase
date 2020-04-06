@@ -10,28 +10,58 @@ BinaryTree::BinaryTree(TreeNode* root)
 
 }
 
+BinaryTree::~BinaryTree()
+{
+    int counter = 0;
+    if(tNode){
+        delete tNode->leftPtr;
+        delete tNode->rightPtr;
+        delete tNode;
+        cout << "The destruction function is used " << ++counter << " times." << endl;
+    }
+}
+
 void BinaryTree::insertNode(int value)
 {
-    insertNode(tNode, value);
+    if(tNode){
+        insertNode(tNode, value);
+    }
+    else{
+        tNode = new TreeNode;
+        tNode->data = value;
+        tNode->leftPtr = NULL;
+        tNode->rightPtr = NULL;
+    }
 
 }
 
 void BinaryTree::insertNode(TreeNode* treePtr, int value)
 {
-    if (treePtr == NULL){
-        treePtr = new TreeNode;
-        treePtr->data = value;
-        treePtr->leftPtr = NULL;
-        treePtr->rightPtr = NULL;
-    }
-    else{
-        if(value <= treePtr->data){
+
+    if(value <= treePtr->data){
+        if(treePtr->leftPtr){
             insertNode(treePtr->leftPtr, value);
         }
         else{
+            treePtr->leftPtr = new TreeNode;
+            treePtr->leftPtr->data = value;
+            treePtr->leftPtr->leftPtr = NULL;
+            treePtr->leftPtr->rightPtr = NULL;
+        }
+
+    }
+    else{
+        if(treePtr->rightPtr){
             insertNode(treePtr->rightPtr, value);
         }
+        else{
+           treePtr->rightPtr = new TreeNode;
+           treePtr->rightPtr->data = value;
+           treePtr->rightPtr->leftPtr = NULL;
+           treePtr->rightPtr->rightPtr = NULL;
+        }
     }
+
 }
 
 TreeNode* BinaryTree::getNode()
@@ -42,6 +72,7 @@ TreeNode* BinaryTree::getNode()
 void BinaryTree::inOrder()
 {
     in_Order(tNode);
+    cout << endl;
 }
 
 void BinaryTree::in_Order(TreeNode* treePtr)
@@ -56,6 +87,7 @@ void BinaryTree::in_Order(TreeNode* treePtr)
 void BinaryTree::preOrder()
 {
     pre_Order(tNode);
+    cout << endl;
 }
 
 void BinaryTree::pre_Order(TreeNode* treePtr)
@@ -70,6 +102,7 @@ void BinaryTree::pre_Order(TreeNode* treePtr)
 void BinaryTree::postOrder()
 {
     post_Order(tNode);
+    cout << endl;
 }
 
 void BinaryTree::post_Order(TreeNode* treePtr)
