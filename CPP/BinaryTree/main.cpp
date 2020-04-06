@@ -5,16 +5,23 @@
 
 using namespace std;
 
+int getNumber()
+{
+    return 1 + rand() % 100;
+}
+
 int main()
 {
-    TreeNode *beg;
-    BinaryTree btA(beg);
+
+    BinaryTree btA;
     srand(time(NULL));
 
     for (int i = 0; i < 10; i++){
-        btA.insertNode(1 + rand() % 100);
+        int r = getNumber();
+        btA.insertNode(r);
     }
 
-    btA.inOrder();
+    btA.preOrder();
+
     return 0;
 }

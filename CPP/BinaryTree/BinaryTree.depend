@@ -1,11 +1,10 @@
 # depslib dependency file v1.0
-1586093033 source:d:\my_cbase\cpp\binarytree\binarytree.cpp
+1586167811 source:d:\my_cbase\cpp\binarytree\binarytree.cpp
 	<iostream>
 	"BinaryTree.h"
 
-1586093002 d:\my_cbase\cpp\binarytree\binarytree.h
+1586166211 d:\my_cbase\cpp\binarytree\binarytree.h
 	<iostream>
-	"TreeNode.h"
 
 1586078553 d:\my_cbase\cpp\binarytree\treenode.h
 	<iostream>

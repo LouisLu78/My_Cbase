@@ -12,33 +12,71 @@ BinaryTree::BinaryTree(TreeNode* root)
 
 void BinaryTree::insertNode(int value)
 {
-    if (tNode == NULL){
+    insertNode(tNode, value);
 
-        tNode->data = value;
-        tNode->leftPtr = NULL;
-        tNode->rightPtr = NULL;
+}
+
+void BinaryTree::insertNode(TreeNode* treePtr, int value)
+{
+    if (treePtr == NULL){
+        treePtr = new TreeNode;
+        treePtr->data = value;
+        treePtr->leftPtr = NULL;
+        treePtr->rightPtr = NULL;
     }
     else{
-        if (value <= tNode->data){
-            tNode = tNode->leftPtr;
-            insertNode(value);
+        if(value <= treePtr->data){
+            insertNode(treePtr->leftPtr, value);
         }
         else{
-            tNode = tNode->rightPtr;
-            insertNode(value);
+            insertNode(treePtr->rightPtr, value);
         }
     }
+}
+
+TreeNode* BinaryTree::getNode()
+{
+    return tNode;
 }
 
 void BinaryTree::inOrder()
 {
-    if (tNode != NULL){
-        tNode = tNode->leftPtr;
-        inOrder();
-        cout << tNode->data << " ";
-        tNode = tNode->rightPtr;
-        inOrder();
+    in_Order(tNode);
+}
+
+void BinaryTree::in_Order(TreeNode* treePtr)
+{
+    if(treePtr){
+        in_Order(treePtr->leftPtr);
+        cout << treePtr->data << " ";
+        in_Order(treePtr->rightPtr);
     }
 }
 
+void BinaryTree::preOrder()
+{
+    pre_Order(tNode);
+}
 
+void BinaryTree::pre_Order(TreeNode* treePtr)
+{
+    if(treePtr){
+        cout << treePtr->data << " ";
+        pre_Order(treePtr->leftPtr);
+        pre_Order(treePtr->rightPtr);
+    }
+}
+
+void BinaryTree::postOrder()
+{
+    post_Order(tNode);
+}
+
+void BinaryTree::post_Order(TreeNode* treePtr)
+{
+    if(treePtr){
+        post_Order(treePtr->leftPtr);
+        post_Order(treePtr->rightPtr);
+        cout << treePtr->data << " ";
+    }
+}

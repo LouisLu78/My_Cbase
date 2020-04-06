@@ -1,29 +1,36 @@
 #ifndef BINARYTREE_H_INCLUDED
 #define BINARYTREE_H_INCLUDED
 #include <iostream>
-#include "TreeNode.h"
 
 using namespace std;
 
-struct TreeNode
+struct treeNode
 {
-    struct TreeNode *leftPtr;
+    struct treeNode *leftPtr;
     int data;
-    struct TreeNode *rightPtr;
+    struct treeNode *rightPtr;
 };
+
+typedef struct treeNode TreeNode;
 
 class BinaryTree
 {
 private:
-    TreeNode *tNode;
+    TreeNode* tNode;
+
+protected:
+    void insertNode(TreeNode*, int );
+    void in_Order(TreeNode*);
+    void pre_Order(TreeNode*);
+    void post_Order(TreeNode*);
 
 public:
-    BinaryTree(TreeNode*);
+    BinaryTree(TreeNode* = nullptr);
+    TreeNode* getNode();
     void insertNode(int );
     void inOrder();
-    //void preOrder(TreeNode *treePtr);
-    //void postOrder(TreeNode *treePtr);
-
+    void preOrder();
+    void postOrder();
 };
 
 #endif // BINARYTREE_H_INCLUDED
