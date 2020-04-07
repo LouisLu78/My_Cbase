@@ -3,31 +3,34 @@
 
 using namespace std;
 
-
-BinaryTree::BinaryTree(TreeNode* root)
+template <typename T>
+BinaryTree<T>::BinaryTree(T* root)
             :tNode(root)
 {
 
 }
 
-BinaryTree::~BinaryTree()
+template <typename T>
+BinaryTree<T>::~BinaryTree()
 {
 
     if(tNode){
         delete tNode->leftPtr;
         delete tNode->rightPtr;
         delete tNode;
-        cout << "The destruction function is used." << endl;
+        //cout << "The destruction function is used." << endl;
     }
 }
 
-void BinaryTree::insertNode(int value)
+template <typename T>
+template <typename E>
+void BinaryTree<T>::insertNode(E value)
 {
     if(tNode){
         insertNode(tNode, value);
     }
     else{
-        tNode = new TreeNode;
+        tNode = new T;
         tNode->data = value;
         tNode->leftPtr = NULL;
         tNode->rightPtr = NULL;
@@ -35,7 +38,9 @@ void BinaryTree::insertNode(int value)
 
 }
 
-void BinaryTree::insertNode(TreeNode* treePtr, int value)
+template <typename T>
+template <typename E>
+void BinaryTree<T>::insertNode(T* treePtr, E value)
 {
 
     if(value <= treePtr->data){
@@ -43,7 +48,7 @@ void BinaryTree::insertNode(TreeNode* treePtr, int value)
             insertNode(treePtr->leftPtr, value);
         }
         else{
-            treePtr->leftPtr = new TreeNode;
+            treePtr->leftPtr = new T;
             treePtr->leftPtr->data = value;
             treePtr->leftPtr->leftPtr = NULL;
             treePtr->leftPtr->rightPtr = NULL;
@@ -55,7 +60,7 @@ void BinaryTree::insertNode(TreeNode* treePtr, int value)
             insertNode(treePtr->rightPtr, value);
         }
         else{
-           treePtr->rightPtr = new TreeNode;
+           treePtr->rightPtr = new T;
            treePtr->rightPtr->data = value;
            treePtr->rightPtr->leftPtr = NULL;
            treePtr->rightPtr->rightPtr = NULL;
@@ -64,18 +69,21 @@ void BinaryTree::insertNode(TreeNode* treePtr, int value)
 
 }
 
-TreeNode* BinaryTree::getNode()
+template <typename T>
+T* BinaryTree<T>::getNode()
 {
     return tNode;
 }
 
-void BinaryTree::inOrder()
+template <typename T>
+void BinaryTree<T>::inOrder()
 {
     in_Order(tNode);
     cout << endl;
 }
 
-void BinaryTree::in_Order(TreeNode* treePtr)
+template <typename T>
+void BinaryTree<T>::in_Order(T* treePtr)
 {
     if(treePtr){
         in_Order(treePtr->leftPtr);
@@ -84,13 +92,15 @@ void BinaryTree::in_Order(TreeNode* treePtr)
     }
 }
 
-void BinaryTree::preOrder()
+template <typename T>
+void BinaryTree<T>::preOrder()
 {
     pre_Order(tNode);
     cout << endl;
 }
 
-void BinaryTree::pre_Order(TreeNode* treePtr)
+template <typename T>
+void BinaryTree<T>::pre_Order(T* treePtr)
 {
     if(treePtr){
         cout << treePtr->data << " ";
@@ -99,13 +109,15 @@ void BinaryTree::pre_Order(TreeNode* treePtr)
     }
 }
 
-void BinaryTree::postOrder()
+template <typename T>
+void BinaryTree<T>::postOrder()
 {
     post_Order(tNode);
     cout << endl;
 }
 
-void BinaryTree::post_Order(TreeNode* treePtr)
+template <typename T>
+void BinaryTree<T>::post_Order(T* treePtr)
 {
     if(treePtr){
         post_Order(treePtr->leftPtr);

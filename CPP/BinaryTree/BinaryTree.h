@@ -3,6 +3,7 @@
 #include <iostream>
 
 using namespace std;
+typedef struct treeNode TreeNode;
 
 struct treeNode
 {
@@ -10,8 +11,6 @@ struct treeNode
     int data;
     struct treeNode *rightPtr;
 };
-
-typedef struct treeNode TreeNode;
 
 class BinaryTree
 {
