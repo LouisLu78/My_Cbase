@@ -13,3 +13,7 @@ studied in the last three months in the field of chemistry.
 the basic skills in coding Python, C and C++. I have written more than 200 programms in total by myself and I believe it will help 
 me a lot in solving chemistry problems. In future I will further deepen my knowledge in computer science when I have time, but I
 will mainly focus on chemistry from now on.
+
+2020-04-08 I should sincerely acknowlege to the article authors of https://www.csdn.net/, https://github.com/，https://www.jianshu.com/, https://m.runoob.com/ and more...
+They are thanked for their generosity in sharing their knowledge and experience online. Maybe I cannot remember their names, but I have recorded their blog website.
+Without the help of their articles, I cannot assimilate the knowledge in the textbook so fast and master the programming skills in short time.
