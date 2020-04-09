@@ -1,0 +1,83 @@
+# depslib dependency file v1.0
+1586178121 source:d:\my_cbase\cpp\binarytree\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586180576 d:\my_cbase\cpp\binarytree\binarytree.h
+	<iostream>
+
+1586078553 d:\my_cbase\cpp\binarytree\treenode.h
+	<iostream>
+
+1586180522 source:d:\my_cbase\cpp\binarytree\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1586246329 source:d:\my_cbase\cpp\binarytree_minorrevision\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586246329 d:\my_cbase\cpp\binarytree_minorrevision\binarytree.h
+	<iostream>
+
+1586246408 source:d:\my_cbase\cpp\binarytree_minorrevision\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1586246329 source:d:\my_cbase\cpp\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586259160 d:\my_cbase\cpp\binarytree_template\binarytree.h
+	<iostream>
+
+1586261199 d:\my_cbase\cpp\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586261173 source:d:\my_cbase\cpp\binarytree_template\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.cpp"
+
+1586361054 source:d:\arbeiten\myfiles\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586420855 d:\arbeiten\myfiles\binarytree_template\binarytree.h
+	<iostream>
+
+1586420720 source:d:\arbeiten\myfiles\binarytree_template\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.cpp"
+
+1586419014 d:\arbeiten\myfiles\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586420720 source:d:\my_cbase\cpp\binarytree_template_vb\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.cpp"
+
+1586419014 d:\my_cbase\cpp\binarytree_template_vb\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586422545 d:\my_cbase\cpp\binarytree_template_vb\binarytree.h
+	<iostream>
+

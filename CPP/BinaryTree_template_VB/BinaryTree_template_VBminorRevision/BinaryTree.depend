@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1586178121 source:d:\my_cbase\cpp\binarytree\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586180576 d:\my_cbase\cpp\binarytree\binarytree.h
+	<iostream>
+
+1586078553 d:\my_cbase\cpp\binarytree\treenode.h
+	<iostream>
+
+1586180522 source:d:\my_cbase\cpp\binarytree\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1586246329 source:d:\my_cbase\cpp\binarytree_minorrevision\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586246329 d:\my_cbase\cpp\binarytree_minorrevision\binarytree.h
+	<iostream>
+
+1586246408 source:d:\my_cbase\cpp\binarytree_minorrevision\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1586246329 source:d:\my_cbase\cpp\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586259160 d:\my_cbase\cpp\binarytree_template\binarytree.h
+	<iostream>
+
+1586261199 d:\my_cbase\cpp\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586261173 source:d:\my_cbase\cpp\binarytree_template\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.cpp"
+
+1586261199 source:c:\users\basanwei\downloads\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586421974 c:\users\basanwei\downloads\binarytree_template\binarytree.h
+	<iostream>
+	"BinaryTree.tpp"
+
+1586261199 c:\users\basanwei\downloads\binarytree_template\binarytree.cpp
+	<iostream>
+	"BinaryTree.h"
+
+1586421769 source:c:\users\basanwei\downloads\binarytree_template\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1586421955 c:\users\basanwei\downloads\binarytree_template\binarytree.tpp
+	<iostream>
+	"BinaryTree.h"
+
