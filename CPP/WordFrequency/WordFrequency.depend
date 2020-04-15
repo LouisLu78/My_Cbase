@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1586960828 source:d:\my_cbase\cpp\wordfrequency\main.cpp
+	<iostream>
+	<string>
+	"WordFrequency.h"
+
+1586961125 d:\my_cbase\cpp\wordfrequency\wordfrequency.h
+	<iostream>
+	<string>
+	<map>
+
+1586961664 source:d:\my_cbase\cpp\wordfrequency\wordfrequency.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<map>
+	"WordFrequency.h"
+

@@ -3,7 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
-#include "BinaryTree.cpp"
+#include "BinaryTree.h"
 
 using namespace std;
 
