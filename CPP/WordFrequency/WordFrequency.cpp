@@ -4,8 +4,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <map>
 #include "WordFrequency.h"
 
 using namespace std;
@@ -64,3 +62,8 @@ WordFrequency::WordFrequency(const string&fileName)
       }
       return counter;
   }
+
+   const MSI &WordFrequency::getMap() const
+   {
+       return wordMap;
+   }

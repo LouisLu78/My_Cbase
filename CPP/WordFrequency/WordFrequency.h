@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <map>
 
 using namespace std;
@@ -14,7 +15,7 @@ class WordFrequency
 private:
     WordFrequency(const WordFrequency& rhs);
     WordFrequency& operator=(const WordFrequency& rhs);
-    //prohibit construction function using copy or assignment of an object
+    //prohibiting construction function using copy or assignment of an object
 
 protected:
     MSI wordMap; //building a map of word and its frequency
@@ -25,6 +26,7 @@ public:
     int getWordFrequency(const string &) const;
     int getWordRank(const string &) const;
     int getTotalWords() const;
+    const MSI &getMap() const;
 };
 
 #endif // WORDFREQUENCY_H_INCLUDED
