@@ -71,3 +71,35 @@
 	<iostream>
 	"BinaryTree.h"
 
+1586421769 source:c:\users\basanwei\downloads\binarytree_template_vbminorrevision\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1587133616 c:\users\basanwei\downloads\binarytree_template_vbminorrevision\binarytree.h
+	<iostream>
+	"BinaryTree.tpp"
+
+1587134108 c:\users\basanwei\downloads\binarytree_template_vbminorrevision\binarytree.tpp
+	<iostream>
+	"BinaryTree.h"
+
+1587134367 source:d:\my_cbase\cpp\binarytree_template_vb\binarytree_template_vbminorrevision\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
+	"BinaryTree.h"
+
+1587133616 d:\my_cbase\cpp\binarytree_template_vb\binarytree_template_vbminorrevision\binarytree.h
+	<iostream>
+	"BinaryTree.tpp"
+
+1587134640 d:\my_cbase\cpp\binarytree_template_vb\binarytree_template_vbminorrevision\binarytree.tpp
+	<iostream>
+	"BinaryTree.h"
+

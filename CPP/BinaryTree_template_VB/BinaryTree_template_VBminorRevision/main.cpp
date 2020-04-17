@@ -30,8 +30,11 @@ int main()
     while(infile >> s){
         sTree.insertNode(s);
     }
+    cout << "\nThe in-oder sequence is:" << endl;
     sTree.inOrder();
+    cout << "\nThe pre-oder sequence is:" << endl;
     sTree.preOrder();
+    cout << "\nThe post-oder sequence is:" << endl;
     sTree.postOrder();
 
     return 0;

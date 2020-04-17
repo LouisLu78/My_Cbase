@@ -24,7 +24,7 @@ private:
 
 protected:
 
-    void insertNode(TreeNode<T>*, T);
+    void insertNode(TreeNode<T>**, T);
 
     void in_Order(TreeNode<T>*);
     void pre_Order(TreeNode<T>*);
@@ -33,7 +33,6 @@ protected:
 public:
     BinaryTree(TreeNode<T>* = NULL);
     virtual ~BinaryTree();
-    TreeNode<T>* getNode();
 
     void insertNode(T);
     void inOrder();

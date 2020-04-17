@@ -18,59 +18,32 @@ BinaryTree<T>::~BinaryTree()
         delete tNode->leftPtr;
         delete tNode->rightPtr;
         delete tNode;
-
     }
 }
 
 template <typename T>
 void BinaryTree<T>::insertNode(T value)
 {
-    if(tNode){
-        insertNode(tNode, value);
-    }
-    else{
-        tNode = new TreeNode<T>;
-        tNode->data = value;
-        tNode->leftPtr = NULL;
-        tNode->rightPtr = NULL;
-    }
-
+        insertNode(&tNode, value);
 }
 
 template <typename T>
-void BinaryTree<T>::insertNode(TreeNode<T>* treePtr, T value)
+void BinaryTree<T>::insertNode(TreeNode<T>** treePtr, T value)
 {
-
-    if(value <= treePtr->data){
-        if(treePtr->leftPtr){
-            insertNode(treePtr->leftPtr, value);
-        }
-        else{
-            treePtr->leftPtr = new TreeNode<T>;
-            treePtr->leftPtr->data = value;
-            treePtr->leftPtr->leftPtr = NULL;
-            treePtr->leftPtr->rightPtr = NULL;
-        }
-
+    if (*treePtr == NULL){
+        (*treePtr) = new TreeNode<T>;
+        (*treePtr)->data = value;
+        (*treePtr)->leftPtr = NULL;
+        (*treePtr)->rightPtr = NULL;
     }
     else{
-        if(treePtr->rightPtr){
-            insertNode(treePtr->rightPtr, value);
+         if(value <= (*treePtr)->data){
+            insertNode(&((*treePtr)->leftPtr), value);
         }
         else{
-           treePtr->rightPtr = new TreeNode<T>;
-           treePtr->rightPtr->data = value;
-           treePtr->rightPtr->leftPtr = NULL;
-           treePtr->rightPtr->rightPtr = NULL;
+            insertNode(&((*treePtr)->rightPtr), value);
         }
     }
-
-}
-
-template <typename T>
-TreeNode<T>* BinaryTree<T>::getNode()
-{
-    return tNode;
 }
 
 template <typename T>
