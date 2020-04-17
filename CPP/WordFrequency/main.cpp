@@ -1,6 +1,4 @@
 #include <iostream>
-#include <iomanip>
-#include <algorithm>
 #include "WordFrequency.h"
 
 using namespace std;
@@ -9,29 +7,21 @@ int main()
 {
     WordFrequency wf("..\\Romeo.txt");
 
+    cout <<"The novel contains " <<  wf.getAllWords() << " words, in which there are "
+            << wf.getTotalDiffWords() << " different words." << endl;
+    cout << endl;
     cout << "The word \"love\" appears for "<< wf.getWordFrequency("love") << " times."<< endl;
     cout <<"The word \"love\" is the "<< wf.getWordRank("love") << "th most frequent word in the novel." << endl;
-    cout <<"The novel contains " <<  wf.getTotalWords() << " different words." << endl;
+    cout << endl;
 
-    MSI wfWordMap = wf.getMap();
-    vector<int>ivec;
+    cout << "The word \"Juliet\" appears for "<< wf.getWordFrequency("Juliet") << " times."<< endl;
+    cout <<"The word \"Juliet\" is the "<< wf.getWordRank("Juliet") << "th most frequent word in the novel." << endl;
+    cout << endl;
 
-    for(MSI::iterator it = wfWordMap.begin(); it !=wfWordMap.end(); it++){
-        ivec.push_back(it->second);
-    }
-    sort(ivec.begin(), ivec.end());
-    vector<int>::iterator end_unique = unique(ivec.begin(), ivec.end());
-    ivec.erase(end_unique, ivec.end());
+    cout << "The word \"Romeo\" appears for "<< wf.getWordFrequency("Romeo") << " times."<< endl;
+    cout <<"The word \"Romeo\" is the "<< wf.getWordRank("Romeo") << "th most frequent word in the novel." << endl;
 
-    cout << "\nThe top 50 most frequently used words in this novel are listed below:" << endl;
-    for(vector<int>::reverse_iterator rit = ivec.rbegin(); rit !=ivec.rbegin() + 50; rit++){
-             for(MSI::iterator it = wfWordMap.begin(); it !=wfWordMap.end(); it++){
-                if(*rit == it->second){
-                    cout << left << setw(15) << it->first <<  left << setw(15) << it->second << endl;
-                }
-             }
-            cout << endl;
-    }
+    wf.getTopRankWords(75);
 
     return 0;
-}
+}//This is the final version.
