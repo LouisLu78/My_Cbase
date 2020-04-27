@@ -68,12 +68,7 @@ int WordFrequency::getWordRank(const string &word) const
 
 int WordFrequency::getTotalDiffWords() const
 {
-    int counter = 0;
-    for (MSI::const_iterator iter = wordMap.begin(); iter != wordMap.end(); iter++)
-    {
-        ++counter;
-    }
-    return counter;
+    return wordMap.size();
 }
 
 int WordFrequency::getAllWords() const
