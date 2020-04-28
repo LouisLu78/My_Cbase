@@ -41,7 +41,7 @@ void insertSort(int* array, const int size)
             }
         }
     }
-}// This program is completed by reference to article published online.
+}
 
 void printArray(int* array,  const int size)
 {

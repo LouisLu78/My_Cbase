@@ -1,5 +1,5 @@
 //Author: Guangqiang Lu
-//Time:
+//Time:20200428
 //Email: gq4350lu@hotmail.com
 
 #include <iostream>
@@ -39,4 +39,4 @@ int main()
     selectSort(dataB, SIZEB);
     printArray(dataB, SIZEB);
      return 0;
-}//This program is written by myself.
+}
