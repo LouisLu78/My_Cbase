@@ -3,8 +3,12 @@
 //Email: gq4350lu@hotmail.com
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #define SIZEA 11
 #define SIZEB 14
+#define SIZEC 10000
 
 void shellSort(int*, const int);
 void printArray(int*, const int);
@@ -18,6 +22,14 @@ int main()
     int dataB[] = {2, 6, 4, 8, 100, 12, 89, 68, 314, 45, 37, 43, 456, 84};
     shellSort(dataB, SIZEB);
     printArray(dataB, SIZEB);
+
+    srand(time(NULL));
+    int dataC[SIZEC];
+    for (int i = 0; i < SIZEC; i++){
+        dataC[i] = rand() % SIZEC +1;
+    }
+    shellSort(dataC, SIZEC);
+    printArray(dataC, SIZEC);
 
     return 0;
 }
