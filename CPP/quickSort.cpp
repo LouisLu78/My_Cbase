@@ -3,7 +3,10 @@
 //Email: gq4350lu@hotmail.com
 
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
 #include <vector>
+#define SIZEC 10000
 
 using namespace std;
 
@@ -62,6 +65,15 @@ int main()
 
     int dataB[] = {2, 6, 4, 8, 10, 12, 89, 68, 314, 45, 37, 43, 456, 84};
     ivec.assign(dataB, dataB + 14);
+    quickSort(ivec);
+    printArray(ivec);
+
+    srand(time(NULL));
+    int dataC[SIZEC];
+    for (int i = 0; i < SIZEC; i++){
+        dataC[i] = rand() % SIZEC +1;
+    }
+    ivec.assign(dataC, dataC + SIZEC);
     quickSort(ivec);
     printArray(ivec);
 

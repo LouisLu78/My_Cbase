@@ -8,7 +8,7 @@ typedef vector<int> VEI;
 
 class HeapSort
 {
-friend ostream& operator<<(ostream&, HeapSort&);
+    friend ostream& operator<<(ostream&, HeapSort&);
 
 private:
     VEI ivec;
@@ -16,7 +16,7 @@ private:
 public:
     HeapSort(int*, int);
     void buildHeap();
-    void adjustHeap( VEI&, int, int );
+    static void adjustHeap( VEI&, int, int );
     void sort();
 };
 

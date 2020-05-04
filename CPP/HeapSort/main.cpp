@@ -17,9 +17,10 @@ int main()
     HeapSort hsB(dataB, 14);
     cout << hsB << endl;
 
-     srand(time(NULL));
+    srand(time(NULL));
     int dataC[SIZEC];
-    for (int i = 0; i < SIZEC; i++){
+    for (int i = 0; i < SIZEC; i++)
+    {
         dataC[i] = rand() % SIZEC +1;
     }
     HeapSort hsC(dataC, SIZEC);
