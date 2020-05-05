@@ -1,7 +1,7 @@
 //Author: Guangqiang Lu
-//Time:
+//Time:20200504
 //Email: gq4350lu@hotmail.com
-#include <iostream>
+#include <stdio.h>
 #include <vector>
 #include <stdlib.h>
 #include <time.h>
@@ -16,8 +16,10 @@ using namespace std;
 int maxNum(int* array, int size)
 {
     int maxNumber = 0;
-    for(int i = 0; i < size; i++){
-        if (array[i] > maxNumber){
+    for(int i = 0; i < size; i++)
+    {
+        if (array[i] > maxNumber)
+        {
             maxNumber = array[i];
         }
     }
@@ -29,38 +31,43 @@ void radixSort(int* array, int size)
     int k = 0, radix = 1;
     int number = maxNum(array, size);
     int d = log10(number)+ 1;
-    vector<vector<int> >ivec(10), ivecb(10);
+    vector<vector<int> >ivec(10), ivecEmpty(10);
 
-    for (int i = 0; i < d; i++){
-        for (int j = 0; j < size; j++){
+    for (int i = 0; i < d; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
             int m = (array[j] / radix) % 10;
-
             ivec[m].push_back(array[j]);
         }
-       for(int p = 0; p < 10; p++) {
-           for( size_t n = 0; n < ivec[p].size(); n++){
-                array[k] = ivec[p][n];
-                k++;
-
-          }
-       }
-       radix *= 10;
-       k = 0;
-       ivec = ivecb;
+        for(int p = 0; p < 10; p++)
+        {
+            for( size_t n = 0; n < ivec[p].size(); n++)
+            {
+                array[k++] = ivec[p][n];
+            }
+        }
+        radix *= 10;
+        k = 0;
+        ivec = ivecEmpty;
     }
 }
 
 void printArray(int* array,  const int size)
 {
-    for (int i = 0; i < size; i++){
-        cout <<array[i] << " ";
-     }
-     cout << endl;
+    for (int i = 0; i < size; i++)
+    {
+        printf("%5d ", array[i]);
+        if (i % 20 == 19)
+        {
+            printf("\n");
+        }
+    }
+    printf("\n");
 }
 
 int main()
 {
-
     int dataB[] = {2, 6, 4, 8, 100, 12, 89, 68, 314, 45, 37, 43, 456, 84};
     radixSort(dataB, SIZEB);
     printArray(dataB, SIZEB);
@@ -71,7 +78,8 @@ int main()
 
     srand(time(NULL));
     int dataC[SIZEC];
-    for (int i = 0; i < SIZEC; i++){
+    for (int i = 0; i < SIZEC; i++)
+    {
         dataC[i] = rand() % SIZEC +1;
     }
     radixSort(dataC, SIZEC);
